@@ -201,7 +201,8 @@
 
         .farm-card img {
             width: 95%;
-            height: 20vh;;
+            height: 20vh;
+            ;
             object-fit: cover;
             border-radius: 20px;
             margin: auto;
@@ -235,7 +236,7 @@
             position: absolute;
             top: -5px;
             right: -5px;
-            background: #489fc9;
+            background: #ff6000;
             color: white;
             border-radius: 50%;
             font-size: 0.7rem;
@@ -281,14 +282,13 @@
             width: 100%;
             padding: 15px;
             padding-left: 50px;
-            /* Espace pour l'icône */
             border: none;
             background: transparent;
             color: var(--text-color);
             font-size: 1rem;
             appearance: none;
-            /* Cache la flèche par défaut */
             -webkit-appearance: none;
+            font-family: Georgia, serif;
         }
 
         .filter-input-wrapper input::placeholder {
@@ -305,12 +305,13 @@
             color: var(--hint-color);
         }
 
+      
         .product-grid {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             gap: 25px;
             padding: 0 15px 80px 15px;
-            margin-top: 5vh;
+            margin-top: 3vh;
         }
 
         .product-card {
@@ -334,12 +335,23 @@
             font-weight: 500;
             justify-content: center;
             display: flex;
-            height: 4vh;
+            align-items: center;
+            height: 6vh;
+            text-align: center;
+            font-family: cursive;
         }
 
         .product-card .farm {
             color: var(--hint-color);
             font-size: 0.8rem;
+            text-align: center;
+            border-bottom: 1px solid grey;
+            margin-bottom: 5px;
+        }
+
+        .product-card .price {
+            text-align: end;
+            font-family: monospace;
         }
 
         .no-results {
@@ -359,7 +371,7 @@
             display: flex;
             justify-content: space-around;
             background: #2c2c2ea1;
-            ;
+            align-items: center;
             padding: 10px 0;
             z-index: 50;
         }
@@ -408,6 +420,7 @@
         .product-details .name {
             font-size: 1.5rem;
             font-weight: 700;
+            font-family: cursive;
         }
 
         .product-details .farm {
@@ -439,8 +452,6 @@
             cursor: pointer;
             display: flex;
             align-items: center;
-            position: absolute;
-            margin-left: 34.6vh;
         }
 
         /* Page Panier & Confirmation */
@@ -461,15 +472,33 @@
 
         .cart-item .item-details {
             flex-grow: 1;
+            background-color: #2c2c2ed9;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+            font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    padding: 1vh;
+
         }
 
         .cart-item .name {
             font-weight: 500;
+            font-family: cursive;
+            margin-bottom: 1vh;
+            margin-top: 1vh;
+
+        }
+
+        .cart-item .gram {
+            font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+            margin-bottom: 1vh;
         }
 
         .cart-item .price {
-            color: var(--accent-color);
+            color: #e6683c;
             font-weight: 700;
+            margin-bottom: 1vh;
         }
 
         .quantity-selector {
@@ -493,13 +522,16 @@
         }
 
         .cart-summary {
-            background: #489fc9;
-            ;
+            background: #3f0000cc;
             color: white;
             padding: 15px;
             border-radius: 10px;
             margin-top: 20px;
+            font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+            text-align: center;
+
         }
+
 
         .cart-total {
             background: var(--secondary-bg-color);
@@ -580,20 +612,15 @@
         /* --- AJOUTE CE STYLE POUR LA DESCRIPTION --- */
         .product-description {
             font-size: 0.95rem;
-            /* Taille de police */
             color: #ff0000;
-            /* Couleur grise claire */
             margin-top: 15px;
             margin-bottom: 20px;
             line-height: 1.4;
-            /* Espacement entre les lignes */
             border-top: 1px solid var(--tertiary-bg-color);
-            /* Ligne de séparation */
             padding-top: 20px;
-            /* Espace au-dessus */
             white-space: pre-wrap;
-            /* Respecte les sauts de ligne */
             text-align: center;
+            font-family: "Georgia", serif;
         }
 
         /* On retire le fond des items de tarif car la carte s'en charge */
@@ -613,8 +640,7 @@
             visibility: hidden;
             /* Caché par défaut */
             min-width: 250px;
-            background-color: #489fc9;
-            ;
+            background-color: #490100c9;
             color: #fff;
             text-align: center;
             border-radius: 10px;
@@ -672,7 +698,7 @@
             font-size: 30px;
             justify-content: space-around;
             width: 80%;
-            font-family: auto;
+            font-family: Impact, fantasy;
         }
 
 
@@ -690,7 +716,7 @@
             width: 100px;
             height: 15vh;
             width: 15vh;
-            margin-bottom: 25vh;
+            margin-bottom: 6vh;
             border-radius: 50%;
             box-shadow: 0px 0px 10px 2px red;
             margin-top: 2vh;
@@ -765,6 +791,88 @@
             background-color: #d35400;
             /* Une couleur orange/marron pour Potato */
         }
+
+        /* --- NOUVEAU STYLE POUR L'ACCORDÉON --- */
+        .accordion-container {
+            width: 100%;
+            margin-bottom: 20px;
+            /* Espace avant la ligne */
+            text-align: center;
+
+        }
+
+        .accordion-item {
+            background: var(--secondary-bg-color);
+            border-radius: 15px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            border: 1px solid var(--tertiary-bg-color);
+        }
+
+        .accordion-header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background: var(--secondary-bg-color);
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-color);
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .accordion-header .accordion-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 20%;
+            margin-right: 15px;
+            border: 1px solid red;
+            box-shadow: 0px 0px 5px 2px red;
+        }
+
+        .accordion-header span {
+            flex-grow: 1;
+            /* Pousse la flèche à droite */
+        }
+
+        .accordion-header .accordion-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            background: var(--tertiary-bg-color);
+        }
+
+        .accordion-content p {
+            padding: 15px;
+            margin: 0;
+            color: var(--hint-color);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            /* Hauteur max pour l'animation */
+            padding-top: 0;
+        }
+
+        /* Style pour la ligne de séparation */
+        .contact-divider {
+            border: none;
+            border-top: 1px solid var(--tertiary-bg-color);
+            margin: 0 0 20px 0;
+            /* Espace avant les liens */
+        }
     </style>
 </head>
 
@@ -773,6 +881,59 @@
         <div class="page-content">
             <img src="LogoReel.png" alt="Logo" class="contact-logo">
             <div class="contact-card">
+
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <img src="LogoReel.PNG" alt="logo" class="accordion-icon">
+                            <span>DELIVERY </span>
+                            <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>
+                                Service rapide et fiable disponible des 100€ de commande avec 20€ de frais de livraison
+                                dans Bordeaux Centre et varient suivant la distance !
+                                <br><br> 🏆 Frais offert pour le canal VIP 🏆
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <img src="LogoReel.PNG" alt="logo" class="accordion-icon">
+                            <span>MEET-UP</span>
+                            <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>
+                                Adresse discrète dans le centre bosseur fiable et rapide !
+                                <br><br> Minimum 50€ de commande 🤑
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <img src="LogoReel.PNG" alt="logo" class="accordion-icon">
+                            <span>HORAIRES</span>
+                            <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>
+                                12H - 00h
+                                <br><br> 🏆 Accès au canal VIP après votre première commandes
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="contact-divider">
+
                 <div id="contact-links-container" class="contact-links-list">
                 </div>
             </div>
@@ -953,10 +1114,10 @@
         </div>
         <div class="page-content">
             <div class="cart-summary">
-                <span>🇮🇹 Résumé de la commande</span>
+                <span class="resume">🗓 Résumé de la commande</span>
                 <p>
-                    <span id="confirmation-items-count">0 article</span>
-                    <span>Total: <span id="confirmation-total-price">0.00€</span></span>
+                    <span id="confirmation-items-count">0 article</span> <br>
+                    <span class="total">Total: <span id="confirmation-total-price">0.00€</span></span>
                 </p>
             </div>
             <h4>Détail des articles</h4>
@@ -969,25 +1130,24 @@
         </div>
         <div class="cart-actions">
             <button id="confirmation-modify-order" class="secondary-action-btn">✏️ Modifier</button>
-            <button id="confirm-order-button" class="main-action-btn telegram-button">💬 Contacter sur Telegram</button>
+            <button id="confirm-order-button" class="main-action-btn telegram-button">💬 Contacter sur Potato</button>
         </div>
     </div>
 
 
     <div class="bottom-nav">
-        <div class="bottom-nav">
-            <button id="nav-menu" data-page="page-home" class="nav-item active">
-                <svg width="24" height="24">
-                    <use href="#icon-home" />
-                </svg>
-            </button>
-            <button id="nav-contact" data-page="page-contact" class="nav-item">
-                <svg width="24" height="24">
-                    <use href="#icon-link" />
-                </svg>
-            </button>
-        </div>
+        <button id="nav-menu" data-page="page-home" class="nav-item active">
+            <svg width="24" height="24">
+                <use href="#icon-home" />
+            </svg>
+        </button>
+        <button id="nav-contact" data-page="page-contact" class="nav-item">
+            <svg width="24" height="24">
+                <use href="#icon-link" />
+            </svg>
+        </button>
     </div>
+
     <div id="notification-toast"></div>
     <script src="script.js"></script>
 </body>

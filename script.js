@@ -27,26 +27,26 @@ document.addEventListener('DOMContentLoaded', function () {
             farms: [
                 {
                     id: 'FROSTYHASH',
-                    name: 'Frosty Hash',
-                    image: 'FrostyFarm.JPG', // Mets une image de farm si tu veux
+                    name: 'Frosty hash ❄️',
+                    image: 'FrostyFarm4.png', // Mets une image de farm si tu veux
                     products: [
                         {
                             id: 'Papaya',
-                            name: 'Papaya',
-                            farm: 'Frosty Hash',
+                            name: '🍑 Papaya 🍍',
+                            farm: '❄️ Frosty hash ❄️',
                             type: 'Hash',
                             image: 'Neujeu3.png',
-                            video: 'VideoNeujeu1.mp4',
+                            video: 'VideoNejeu1.mp4',
                             description: 'Type d\'exctraction \n Wpff-120u',
                             tarifs: [
                                 { weight: '1g', price: 80.00 },
                                 { weight: '2g', price: 150.00 },
                             ]
-                        },/* changer la police,  page acceuil sur tele , potato redirect, image categ,     */
+                        },/* changer la police, potato redirect, LiveRosin 3 varieter differente et certainnee scelle on peut pas cliquer dessus, add drapeau sur les image : usa    */
                         {
                             id: 'Bluezushi',
-                            name: 'Blue zushi',
-                            farm: 'Frosty Hash',
+                            name: '🍣 Blue Zushi 🍱',
+                            farm: '❄️ Frosty hash ❄️',
                             type: 'Hash',
                             image: 'Neujeu4.png',
                             video: 'VideoNejeu2.mp4',
@@ -57,22 +57,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             ]
                         },
                         {
-                            id: 'Watermelon Tourmaline',
-                            name: 'Watermelon Tourmaline',
-                            farm: 'Frosty Hash',
-                            type: 'Hash',
-                            image: 'Nejeu1.jpeg',
-                            video: 'MousseauStar.mp4',
-                            description: 'Type d\'exctraction \n Live rosin 70-120u',
-                            tarifs: [
-                                { weight: '1g', price: 250.00 },
-                                { weight: '2g', price: 500.00 },
-                            ]
-                        },
-                        {
                             id: 'GakPak',
-                            name: 'GakPak',
-                            farm: 'Frosty Hash',
+                            name: '🍑 Gak Pak 🍓',
+                            farm: '❄️ Frosty hash ❄️',
                             type: 'Hash',
                             image: 'Nejeu1.jpeg',
                             video: 'MousseauStar.mp4',
@@ -85,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         {
                             id: 'Zkittlez',
                             name: 'Zkittlez',
-                            farm: 'Frosty Hash',
+                            farm: '❄️ Frosty hash ❄️',
                             type: 'Hash',
                             image: 'Nejeu1.jpeg',
                             video: 'MousseauStar.mp4',
@@ -93,6 +80,19 @@ document.addEventListener('DOMContentLoaded', function () {
                             tarifs: [
                                 { weight: '1g', price: 250.00 },
                                 { weight: '2g', price: 500.00 },
+                            ]
+                        },
+                        {
+                            id: 'Watermelon Tourmaline',
+                            name: '🍉 Watermelon tourmaline 🍒',
+                            farm: '❄️ Frosty hash ❄️',
+                            type: 'Hash',
+                            image: 'Nejeu1.jpeg',
+                            video: 'MousseauStar.mp4',
+                            description: 'Type d\'exctraction \n Live rosin 70-120u',
+                            tarifs: [
+                                { weight: '2g', price: 250.00 },
+                                { weight: '4g', price: 500.00 },
                             ]
                         }
                     ]
@@ -113,13 +113,13 @@ document.addEventListener('DOMContentLoaded', function () {
             farms: [
                 {
                     id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard Trees',
+                    name: 'Wizard trees 🔮',
                     image: 'WizardFarm.JPG', // Mets une image de farm si tu veux
                     products: [
                         {
                             id: 'ZangBanger',
-                            name: 'Zand Banger',
-                            farm: 'Wizard trees',
+                            name: '🍇 Zang Banger 🌪',
+                            farm: '🔮 Wizard trees 🔮',
                             type: 'Weed',
                             image: 'Zang.png',
                             video: 'VideoCali2.mp4',
@@ -132,8 +132,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Potion',
-                            name: 'Potion',
-                            farm: 'Wizard trees',
+                            name: '🚀 Potion ✨',
+                            farm: '🔮 Wizard trees 🔮',
                             type: 'Weed',
                             image: 'Cali2.png',
                             video: 'VideoCali1.mp4',
@@ -199,68 +199,75 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- MODIFIÉ : renderHomePage ---
 
- function renderHomePage() {
-    // Toujours afficher le conteneur principal des filtres
-    filterContainer.style.display = 'flex';
+    function renderHomePage() {
+        // Toujours afficher le conteneur principal des filtres
+        filterContainer.style.display = 'flex';
 
-    // On enlève les anciens boutons "retour"
-    const existingBackBtnCat = filterContainer.querySelector('.back-to-categories-btn');
-    if (existingBackBtnCat) existingBackBtnCat.remove();
-    const existingBackBtnFarm = filterContainer.querySelector('.back-to-farms-btn');
-    if (existingBackBtnFarm) existingBackBtnFarm.remove();
+        // On enlève les anciens boutons "retour"
+        const existingBackBtnCat = filterContainer.querySelector('.back-to-categories-btn');
+        if (existingBackBtnCat) existingBackBtnCat.remove();
+        const existingBackBtnFarm = filterContainer.querySelector('.back-to-farms-btn');
+        if (existingBackBtnFarm) existingBackBtnFarm.remove();
 
 
-    if (currentView === 'categories') {
-        renderCategoryList();
-        
-        // --- GESTION DES FILTRES (Vue Catégorie) ---
-        searchFilterWrapper.style.display = 'none';
-        farmFilterWrapper.style.display = 'none';
-        qualityFilterWrapper.style.display = 'flex'; // On montre QUE la qualité
+        if (currentView === 'categories') {
+            renderCategoryList();
 
-        // --- GESTION DU STYLE DE GRILLE ---
-        productListContainer.style.gridTemplateColumns = 'repeat(1, 1fr)';
+            // --- GESTION DES FILTRES (Vue Catégorie) ---
+            searchFilterWrapper.style.display = 'none';
+            farmFilterWrapper.style.display = 'none';
+            qualityFilterWrapper.style.display = 'flex'; // On montre QUE la qualité
 
-    } else if (currentView === 'farms') {
-        renderFarmList(currentCategoryId);
+            // --- GESTION DU STYLE DE GRILLE ---
+            productListContainer.style.gridTemplateColumns = 'repeat(1, 1fr)';
 
-        // --- GESTION DES FILTRES (Vue Farms) ---
-        searchFilterWrapper.style.display = 'none';
-        farmFilterWrapper.style.display = 'none'; // Pas de filtres pour les farms
-        qualityFilterWrapper.style.display = 'none';
+        } else if (currentView === 'farms') {
+            renderFarmList(currentCategoryId);
 
-        // --- GESTION DU STYLE DE GRILLE ---
-        productListContainer.style.gridTemplateColumns = 'repeat(1, 1fr)'; // 1 colonne pour les farms
+            // --- GESTION DES FILTRES (Vue Farms) ---
+            searchFilterWrapper.style.display = 'none';
+            farmFilterWrapper.style.display = 'none'; // Pas de filtres pour les farms
+            qualityFilterWrapper.style.display = 'none';
 
-        // --- AJOUT BOUTON RETOUR (vers Catégories) ---
-        const category = appData.find(c => c.id === currentCategoryId);
-        const backButton = document.createElement('button');
-        backButton.className = 'back-to-categories-btn'; // CLASSE IMPORTANTE
-        backButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> ${category.name}`;
-        backButton.style.cssText = `background: var(--tertiary-bg-color); border: none; color: white; padding: 10px 15px; border-radius: 10px; font-size: 1.1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; margin-top: 3vh;`;
-        filterContainer.prepend(backButton);
+            // --- GESTION DU STYLE DE GRILLE ---
+            productListContainer.style.gridTemplateColumns = 'repeat(1, 1fr)'; // 1 colonne pour les farms
 
-    } else if (currentView === 'products') {
-        renderProductList(currentCategoryId, currentFarmId);
+            // --- AJOUT BOUTON RETOUR (vers Catégories) ---
+            const category = appData.find(c => c.id === currentCategoryId);
+            const backButton = document.createElement('button');
+            backButton.className = 'back-to-categories-btn'; // CLASSE IMPORTANTE
+            backButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> ${category.name}`;
+            backButton.style.cssText = `background: var(--tertiary-bg-color); border: none; color: white; padding: 10px 15px; border-radius: 10px; font-size: 1.1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; margin-top: 3vh;font-family: Copperplate;`;
+            filterContainer.prepend(backButton);
 
-        // --- GESTION DES FILTRES (Vue Produit) ---
-        searchFilterWrapper.style.display = 'flex'; 
-        farmFilterWrapper.style.display = 'flex'; // On montre les filtres produits
-        qualityFilterWrapper.style.display = 'none'; // On cache la qualité
-        
-        // --- GESTION DU STYLE DE GRILLE ---
-        productListContainer.style.gridTemplateColumns = 'repeat(2, 1fr)'; // 2 colonnes
+        } else if (currentView === 'products') {
+            renderProductList(currentCategoryId, currentFarmId);
 
-        // --- AJOUT BOUTON RETOUR (vers Farms) ---
-        const category = appData.find(c => c.id === currentCategoryId);
-        const farm = category.farms.find(f => f.id === currentFarmId);
-        const backButton = document.createElement('button');
-        backButton.className = 'back-to-farms-btn'; // CLASSE IMPORTANTE
-        backButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> ${farm.name}`;
-        backButton.style.cssText = `background: var(--tertiary-bg-color); border: none; color: white; padding: 10px 15px; border-radius: 10px; font-size: 1.1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; margin-top: 3vh;`;
-        filterContainer.prepend(backButton);
+            // --- GESTION DES FILTRES (Vue Produit) ---
+            searchFilterWrapper.style.display = 'flex';
+            farmFilterWrapper.style.display = 'flex'; // On montre les filtres produits
+            qualityFilterWrapper.style.display = 'none'; // On cache la qualité
+
+            // --- GESTION DU STYLE DE GRILLE ---
+            productListContainer.style.gridTemplateColumns = 'repeat(2, 1fr)'; // 2 colonnes
+
+            // --- AJOUT BOUTON RETOUR (vers Farms) ---
+            const category = appData.find(c => c.id === currentCategoryId);
+            const farm = category.farms.find(f => f.id === currentFarmId);
+            const backButton = document.createElement('button');
+            backButton.className = 'back-to-farms-btn'; // CLASSE IMPORTANTE
+            backButton.innerHTML = `<svg width="24"
+             height="24"
+              viewBox="0 0 24 24"
+              ><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>  ${farm.name}`;
+            backButton.style.cssText = `background: var(--tertiary-bg-color); 
+            border: none; color: white; padding: 10px 15px; 
+            border-radius: 10px; font-size: 1.1rem; 
+            font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; margin-top: 3vh;    font-family: Copperplate;
+            `;
+            filterContainer.prepend(backButton);
+        }
     }
-}
 
     // --- MODIFIÉ : renderCategoryList ---
     // Prend en compte le filtre qualité
@@ -302,18 +309,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const farms = category.farms; // Pas de filtres ici pour l'instant
-        
+
         productListContainer.innerHTML = '';
         if (farms.length === 0) {
             productListContainer.innerHTML = '<p class="no-results">Aucune farm trouvée pour cette catégorie.</p>';
             return;
         }
-        
+
         farms.forEach(farm => {
             const card = document.createElement('div');
             card.className = 'farm-card'; // NOUVELLE CLASSE
             card.dataset.farmId = farm.id; // DATASET IMPORTANT
-            
+
             card.innerHTML = `
                 <img src="${farm.image}" alt="${farm.name}">
             `;
@@ -321,39 +328,39 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-   // Affiche la liste des PRODUITS pour une farm
-   function renderProductList(categoryId, farmId) {
-    const category = appData.find(c => c.id === categoryId);
-    if (!category) {
-        productListContainer.innerHTML = '<p class="no-results">Catégorie non trouvée.</p>';
-        return;
-    }
-    const farm = category.farms.find(f => f.id === farmId);
-    if (!farm) {
-        productListContainer.innerHTML = '<p class="no-results">Farm non trouvée.</p>';
-        return;
-    }
+    // Affiche la liste des PRODUITS pour une farm
+    function renderProductList(categoryId, farmId) {
+        const category = appData.find(c => c.id === categoryId);
+        if (!category) {
+            productListContainer.innerHTML = '<p class="no-results">Catégorie non trouvée.</p>';
+            return;
+        }
+        const farm = category.farms.find(f => f.id === farmId);
+        if (!farm) {
+            productListContainer.innerHTML = '<p class="no-results">Farm non trouvée.</p>';
+            return;
+        }
 
-    const filteredProducts = farm.products.filter(product => {
-        const searchMatch = product.name.toLowerCase().includes(currentFilters.searchTerm.toLowerCase());
-        const qualityMatch = currentFilters.quality === 'all' || product.quality === currentFilters.quality;
-        const farmMatch = currentFilters.farm === 'all' || product.farm === currentFilters.farm;
-        
-        return searchMatch && qualityMatch && farmMatch;
-    });
-    
-    productListContainer.innerHTML = '';
-    if (filteredProducts.length === 0) {
-        productListContainer.innerHTML = '<p class="no-results">Aucun produit ne correspond à votre recherche.</p>';
-        return;
-    }
-    
-    filteredProducts.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'product-card product-item-card';
-        card.dataset.productId = product.id; 
-        
-        card.innerHTML = `
+        const filteredProducts = farm.products.filter(product => {
+            const searchMatch = product.name.toLowerCase().includes(currentFilters.searchTerm.toLowerCase());
+            const qualityMatch = currentFilters.quality === 'all' || product.quality === currentFilters.quality;
+            const farmMatch = currentFilters.farm === 'all' || product.farm === currentFilters.farm;
+
+            return searchMatch && qualityMatch && farmMatch;
+        });
+
+        productListContainer.innerHTML = '';
+        if (filteredProducts.length === 0) {
+            productListContainer.innerHTML = '<p class="no-results">Aucun produit ne correspond à votre recherche.</p>';
+            return;
+        }
+
+        filteredProducts.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card product-item-card';
+            card.dataset.productId = product.id;
+
+            card.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <div class="info">
                 <div class="name">${product.name}</div>
@@ -361,9 +368,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="price">${product.tarifs[0].price.toFixed(2)}€</div>
             </div>
         `;
-        productListContainer.appendChild(card);
-    });
-}
+            productListContainer.appendChild(card);
+        });
+    }
 
 
     // Affiche la page de détail d'un produit
@@ -426,7 +433,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <img src="${item.image}" alt="${item.name}">
                 <div class="item-details">
                     <div class="name">${item.name}</div>
-                    <div>${item.weight} - ${item.unitPrice.toFixed(2)}€</div>
+                    <div class="gram" >${item.weight} - ${item.unitPrice.toFixed(2)}€</div>
                     <div class="price">${item.totalPrice.toFixed(2)}€</div>
                 </div>
                 <div class="quantity-selector">
@@ -455,9 +462,9 @@ document.addEventListener('DOMContentLoaded', function () {
              <div class="cart-item">
                 <img src="${item.image}" alt="${item.name}">
                 <div class="item-details">
-                    <div>${index + 1}. ${item.name}</div>
-                    <div>Quantité: ${item.quantity}x ${item.weight}</div>
-                    <div>Prix unitaire: ${item.unitPrice.toFixed(2)}€</div>
+                    <div class="name"> ${item.name}</div>
+                    <div class="quantity">Quantité: ${item.quantity}x ${item.weight}</div>
+                    <div class="price">Prix unitaire: ${item.unitPrice.toFixed(2)}€</div>
                 </div>
             </div>
         `).join('');
@@ -655,121 +662,145 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Clics sur le reste de la page
-   document.body.addEventListener('click', function(e) {
-    const target = e.target;
+    document.body.addEventListener('click', function (e) {
+        const target = e.target;
 
-    // 1. Clic sur une carte CATÉGORIE
-    const categoryCard = target.closest('.category-card');
-    if (categoryCard) {
-        currentView = 'farms'; // On va à la vue "farms"
-        currentCategoryId = categoryCard.dataset.categoryId;
-        // On reset les filtres
-        currentFilters.searchTerm = '';
-        document.getElementById('search-filter').value = '';
-        renderHomePage();
-        return;
-    }
+        // Gère l'accordéon sur la page contact
+        const accordionHeader = target.closest('.accordion-header');
+        if (accordionHeader) {
+            const accordionItem = accordionHeader.parentElement;
 
-    // 2. NOUVEAU : Clic sur une carte FARM
-    const farmCard = target.closest('.farm-card');
-    if (farmCard) {
-        currentView = 'products'; // On va à la vue "products"
-        currentFarmId = farmCard.dataset.farmId;
-        // On reset les filtres
-        currentFilters.searchTerm = '';
-        document.getElementById('search-filter').value = '';
-        renderHomePage();
-        return;
-    }
+            // On ferme les autres items
+            document.querySelectorAll('#page-contact .accordion-item.active').forEach(item => {
+                if (item !== accordionItem) {
+                    item.classList.remove('active');
+                }
+            });
 
-    // 3. Clic sur une carte PRODUIT
-    const productCard = target.closest('.product-item-card');
-    if (productCard) {
-        renderProductPage(productCard.dataset.productId);
-        return;
-    }
+            // On ouvre/ferme l'item cliqué
+            accordionItem.classList.toggle('active');
+            return; // On arrête là pour ne pas déclencher d'autres clics
+        }
 
-    // 4. NOUVEAU : Clic sur le bouton "Retour" (vers Catégories)
-    if (target.closest('.back-to-categories-btn')) {
-        currentView = 'categories';
-        currentCategoryId = null;
-        currentFilters.searchTerm = ''; 
-        document.getElementById('search-filter').value = '';
-        renderHomePage();
-        return;
-    }
+        // 1. Clic sur une carte CATÉGORIE
+        const categoryCard = target.closest('.category-card');
+        if (categoryCard) {
+            currentView = 'farms'; // On va à la vue "farms"
+            currentCategoryId = categoryCard.dataset.categoryId;
+            // On reset les filtres
+            currentFilters.searchTerm = '';
+            document.getElementById('search-filter').value = '';
+            renderHomePage();
+            return;
+        }
 
-    // 5. NOUVEAU : Clic sur le bouton "Retour" (vers Farms)
-    if (target.closest('.back-to-farms-btn')) {
-        currentView = 'farms';
-        currentFarmId = null;
-        currentFilters.searchTerm = ''; 
-        document.getElementById('search-filter').value = '';
-        renderHomePage();
-        return;
-    }
+        // 2. NOUVEAU : Clic sur une carte FARM
+        const farmCard = target.closest('.farm-card');
+        if (farmCard) {
+            currentView = 'products'; // On va à la vue "products"
+            currentFarmId = farmCard.dataset.farmId;
+            // On reset les filtres
+            currentFilters.searchTerm = '';
+            document.getElementById('search-filter').value = '';
+            renderHomePage();
+            return;
+        }
 
-    // --- Reste de la logique de clic (panier, etc.) ---
+        // 3. Clic sur une carte PRODUIT
+        const productCard = target.closest('.product-item-card');
+        if (productCard) {
+            renderProductPage(productCard.dataset.productId);
+            return;
+        }
 
-    // Clic sur "Ajouter au panier"
-    if (target.closest('.add-to-cart-btn')) {
-        const btn = target.closest('.add-to-cart-btn');
-        addToCart(btn.dataset.productId, btn.dataset.weight, parseFloat(btn.dataset.price));
-    }
-    
-    // Clic sur les boutons de quantité
-    if (target.closest('.quantity-btn')) {
-        const btn = target.closest('.quantity-btn');
-        updateQuantity(btn.dataset.id, btn.dataset.action);
-    }
-    
-    // Clic sur le bouton "fermer"
-    if (target.closest('.close-button')) {
-        showPage('page-home');
-        document.querySelector('#nav-menu').classList.add('active');
-        document.querySelector('#nav-contact').classList.remove('active');
-    }
+        // 4. NOUVEAU : Clic sur le bouton "Retour" (vers Catégories)
+        if (target.closest('.back-to-categories-btn')) {
+            currentView = 'categories';
+            currentCategoryId = null;
+            currentFilters.searchTerm = '';
+            document.getElementById('search-filter').value = '';
+            renderHomePage();
+            return;
+        }
 
-    // Clic sur "Continuer les achats"
-    if (target.closest('#cart-continue-shopping')) {
-        showPage('page-home');
-        document.querySelector('#nav-menu').classList.add('active');
-        document.querySelector('#nav-contact').classList.remove('active');
-    }
-    
-    // Clic sur les boutons "retour" (des pages produits, panier...)
-    if (target.closest('.back-button')) {
-        showPage('page-home');
-        document.querySelector('#nav-menu').classList.add('active');
-        document.querySelector('#nav-contact').classList.remove('active');
-    }
-    
-    // Clic sur le bouton du panier
-    if (target.closest('#home-cart-button')) {
-        renderCart();
-        showPage('page-cart');
-    }
-    
-    // Clic sur "Commander"
-    if (target.closest('#checkout-button')) {
-        renderConfirmation();
-    }
-    
-    // Clic sur "Modifier"
-    if (target.closest('#confirmation-modify-order')) {
-        showPage('page-cart');
-    }
-    
-    // Clic sur "Confirmer la commande"
-    if (target.closest('#confirm-order-button')) {
-        const targetUsername = 'plugsBotOfficiel';
-        let message = formatOrderMessage();
-        message = message.replace(/\*/g, ''); 
-        const encodedMessage = encodeURIComponent(message);
-        const telegramUrl = `https:t.me/${targetUsername}?text=${encodedMessage}`;
-        tg.openLink(telegramUrl);
-    }
-});
+        // 5. NOUVEAU : Clic sur le bouton "Retour" (vers Farms)
+        if (target.closest('.back-to-farms-btn')) {
+            currentView = 'farms';
+            currentFarmId = null;
+            currentFilters.searchTerm = '';
+            document.getElementById('search-filter').value = '';
+            renderHomePage();
+            return;
+        }
+
+        // --- Reste de la logique de clic (panier, etc.) ---
+
+        // Clic sur "Ajouter au panier"
+        if (target.closest('.add-to-cart-btn')) {
+            const btn = target.closest('.add-to-cart-btn');
+            addToCart(btn.dataset.productId, btn.dataset.weight, parseFloat(btn.dataset.price));
+        }
+
+        // Clic sur les boutons de quantité
+        if (target.closest('.quantity-btn')) {
+            const btn = target.closest('.quantity-btn');
+            updateQuantity(btn.dataset.id, btn.dataset.action);
+        }
+
+        // Clic sur le bouton "fermer"
+        if (target.closest('.close-button')) {
+            showPage('page-home');
+            document.querySelector('#nav-menu').classList.add('active');
+            document.querySelector('#nav-contact').classList.remove('active');
+        }
+
+        // Clic sur "Continuer les achats"
+        if (target.closest('#cart-continue-shopping')) {
+            showPage('page-home');
+            document.querySelector('#nav-menu').classList.add('active');
+            document.querySelector('#nav-contact').classList.remove('active');
+        }
+
+        // Clic sur les boutons "retour" (des pages produits, panier...)
+        if (target.closest('.back-button')) {
+            showPage('page-home');
+            document.querySelector('#nav-menu').classList.add('active');
+            document.querySelector('#nav-contact').classList.remove('active');
+        }
+
+        // Clic sur le bouton du panier
+        if (target.closest('#home-cart-button')) {
+            renderCart();
+            showPage('page-cart');
+        }
+
+        // Clic sur "Commander"
+        if (target.closest('#checkout-button')) {
+            renderConfirmation();
+        }
+
+        // Clic sur "Modifier"
+        if (target.closest('#confirmation-modify-order')) {
+            showPage('page-cart');
+        }
+
+        // Clic sur "Confirmer la commande" (VERSION POTATO)
+        if (target.closest('#confirm-order-button')) {
+            // 1. Remplace 'TON_PSEUDO_POTATO' par ton VRAI pseudo Potato.
+            const targetPotatoUser = 'BPDiSPENSARY';
+
+            let message = formatOrderMessage();
+            message = message.replace(/\*/g, '');
+            const encodedMessage = encodeURIComponent(message);
+
+            // 2. On construit le lien Potato.
+            // (Utilise 'p/u/' pour un compte utilisateur, ou 'p/s/' pour un bot)
+            const potatoUrl = `https://potato.im/p/u/${targetPotatoUser}?text=${encodedMessage}`;
+
+            // 3. On utilise la même fonction pour ouvrir le lien
+            tg.openLink(potatoUrl);
+        }
+    });
 
     // --- INITIALISATION DE L'APP ---
     function init() {
