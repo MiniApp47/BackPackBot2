@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     id: 'WIZARDTREES', // J'ai inventé un ID de farm
                     name: 'Wizard trees 🔮',
-                    image: 'wizard4.png', // Mets une image de farm si tu veux
+                    image: 'Wizard4.png', // Mets une image de farm si tu veux
                     badgeText: '2 produits',
                     products: [
                         {
