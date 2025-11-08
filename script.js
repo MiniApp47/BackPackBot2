@@ -28,10 +28,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     id: 'FROSTYHASH',
                     name: 'Frosty hash ❄️',
-                    image: 'FrostyFarm4.png', // Mets une image de farm si tu veux
+                    image: 'Frosty2.png', // Mets une image de farm si tu veux
+                    badgeText: '5 produits',
                     products: [
                         {
                             id: 'Papaya',
+                            flag: '🇺🇸', 
                             name: '🍑 Papaya 🍍',
                             farm: '❄️ Frosty hash ❄️',
                             type: 'Hash',
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },/* changer la police, potato redirect, LiveRosin 3 varieter differente et certainnee scelle on peut pas cliquer dessus, add drapeau sur les image : usa    */
                         {
                             id: 'Bluezushi',
+                            flag: '🇺🇸', 
                             name: '🍣 Blue Zushi 🍱',
                             farm: '❄️ Frosty hash ❄️',
                             type: 'Hash',
@@ -58,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'GakPak',
+                            flag: '🇺🇸', 
                             name: '🍑 Gak Pak 🍓',
                             farm: '❄️ Frosty hash ❄️',
                             type: 'Hash',
@@ -71,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Zkittlez',
+                            flag: '🇺🇸', 
                             name: 'Zkittlez',
                             farm: '❄️ Frosty hash ❄️',
                             type: 'Hash',
@@ -84,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Watermelon Tourmaline',
+                            flag: '🇺🇸', 
                             name: '🍉 Watermelon tourmaline 🍒',
                             farm: '❄️ Frosty hash ❄️',
                             type: 'Hash',
@@ -114,10 +120,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     id: 'WIZARDTREES', // J'ai inventé un ID de farm
                     name: 'Wizard trees 🔮',
-                    image: 'WizardFarm.JPG', // Mets une image de farm si tu veux
+                    image: 'wizard4.png', // Mets une image de farm si tu veux
+                    badgeText: '2 produits',
                     products: [
                         {
                             id: 'ZangBanger',
+                            flag: '🇺🇸', 
                             name: '🍇 Zang Banger 🌪',
                             farm: '🔮 Wizard trees 🔮',
                             type: 'Weed',
@@ -132,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Potion',
+                            flag: '🇺🇸', 
                             name: '🚀 Potion ✨',
                             farm: '🔮 Wizard trees 🔮',
                             type: 'Weed',
@@ -320,10 +329,19 @@ document.addEventListener('DOMContentLoaded', function () {
             const card = document.createElement('div');
             card.className = 'farm-card'; // NOUVELLE CLASSE
             card.dataset.farmId = farm.id; // DATASET IMPORTANT
+            const productCount = farm.products.length;
 
+            let badgeHTML = '';
+            if (farm.badgeText) {
+                badgeHTML = `<div class="card-badge">${farm.badgeText}</div>`;
+            }
+            
             card.innerHTML = `
-                <img src="${farm.image}" alt="${farm.name}">
-            `;
+            <div class="card-badge">${productCount} produit${productCount > 1 ? 's' : ''}</div>
+            
+            <img src="${farm.image}" alt="${farm.name}">
+           
+        `;
             productListContainer.appendChild(card);
         });
     }
@@ -359,15 +377,16 @@ document.addEventListener('DOMContentLoaded', function () {
             const card = document.createElement('div');
             card.className = 'product-card product-item-card';
             card.dataset.productId = product.id;
+            let flagHTML = product.flag ? `<span class="product-flag">${product.flag}</span>` : '';
 
             card.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <div class="info">
-                <div class="name">${product.name}</div>
-                <div class="farm">${product.farm}</div>
-                <div class="price">${product.tarifs[0].price.toFixed(2)}€</div>
-            </div>
-        `;
+                <img src="${product.image}" alt="${product.name}">
+                <div class="info">
+                    <div class="name">${product.name} ${flagHTML}</div>
+                    <div class="farm">${product.farm}</div>
+                    <div class="price">${product.tarifs[0].price.toFixed(2)}€</div>
+                </div>
+            `;
             productListContainer.appendChild(card);
         });
     }
