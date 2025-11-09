@@ -282,15 +282,26 @@
         .filter-input-wrapper input,
         .filter-select-wrapper select {
             width: 100%;
-            padding: 15px;
-            padding-left: 50px;
+            
+            /* --- MODIFICATION --- */
+            /* On décompose le padding pour mieux le contrôler */
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 50px;  /* Espace pour l'icône à gauche */
+            padding-right: 40px; /* Espace pour la flèche à droite */
+            /* --- FIN MODIFICATION --- */
+            
             border: none;
             background: transparent;
             color: var(--text-color);
             font-size: 1rem;
-            appearance: none;
+            appearance: none; 
             -webkit-appearance: none;
-            font-family: Georgia, serif;
+            
+            /* --- AJOUTS POUR iOS --- */
+            border-radius: 0; /* Empêche le select de déborder du wrapper sur iOS */
+            line-height: normal; /* Reset la hauteur de ligne d'iOS */
+            height: auto; /* Reset la hauteur d'iOS */
         }
 
         .filter-input-wrapper input::placeholder {
