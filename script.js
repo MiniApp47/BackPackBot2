@@ -202,6 +202,21 @@ document.addEventListener('DOMContentLoaded', function () {
     function showPage(pageId) {
         pages.forEach(p => p.classList.remove('active'));
         document.getElementById(pageId).classList.add('active');
+
+        // --- GESTION AUTOMATIQUE DES BOUTONS NAV ---
+        const homeNav = document.getElementById('nav-menu');
+        const contactNav = document.getElementById('nav-contact');
+        
+        // Si on affiche la page contact, on met le bouton contact en actif
+        if (pageId === 'page-contact') {
+            homeNav.classList.remove('active');
+            contactNav.classList.add('active');
+        } 
+        // Pour TOUTES les autres pages (home, produit, panier, etc.), on met 'home' en actif
+        else {
+            homeNav.classList.add('active');
+            contactNav.classList.remove('active');
+        }
     }
 
     // --- LOGIQUE D'AFFICHAGE ---
@@ -655,8 +670,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const pageId = item.dataset.page;
             if (!pageId) return;
 
-            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
+            // Les lignes gérant la classe 'active' ont été supprimées
+            // showPage(pageId) s'en occupe maintenant.
 
             if (pageId === 'page-contact') {
                 renderContactPage();
@@ -672,7 +687,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('search-filter').value = '';
                 document.getElementById('quality-filter').value = 'all';
                 document.getElementById('farm-filter').value = 'all';
-
+                
                 renderHomePage();
             }
 
@@ -769,22 +784,19 @@ document.addEventListener('DOMContentLoaded', function () {
         // Clic sur le bouton "fermer"
         if (target.closest('.close-button')) {
             showPage('page-home');
-            document.querySelector('#nav-menu').classList.add('active');
-            document.querySelector('#nav-contact').classList.remove('active');
+            // La gestion des classes 'active' est maintenant dans showPage
         }
 
         // Clic sur "Continuer les achats"
         if (target.closest('#cart-continue-shopping')) {
             showPage('page-home');
-            document.querySelector('#nav-menu').classList.add('active');
-            document.querySelector('#nav-contact').classList.remove('active');
+            // La gestion des classes 'active' est maintenant dans showPage
         }
-
+        
         // Clic sur les boutons "retour" (des pages produits, panier...)
         if (target.closest('.back-button')) {
             showPage('page-home');
-            document.querySelector('#nav-menu').classList.add('active');
-            document.querySelector('#nav-contact').classList.remove('active');
+            // La gestion des classes 'active' est maintenant dans showPage
         }
 
         // Clic sur le bouton du panier
