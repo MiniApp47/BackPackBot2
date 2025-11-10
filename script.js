@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // --- Catégorie 1: Mousseux Cake ---
         {
             id: 'EXTRACTION',
-            name: 'Exctraction',
+            name: ' 🔍 Exctraction',
             farm: '',
             type: 'Hash',
             quality: ' 🔍 Exctraction',
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // --- Catégorie 2: V.V.S TANGER ---
         {
             id: 'FLEURS',
-            name: 'Fleurs',
+            name: ' 🥀 Fleurs',
             farm: '',
             type: 'Weed',
             quality: ' 🥀 Fleurs',
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
          // --- Catégorie 2: V.V.S TANGER ---
          {
             id: 'HASH',
-            name: ' Hash',
+            name: ' 🍫 Hash',
             farm: '',
             type: 'Hash',
             quality: ' 🍫 Hash',
