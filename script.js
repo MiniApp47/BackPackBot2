@@ -1016,7 +1016,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // 2. On construit le lien avec le "custom URL scheme"
             // Ça force l'ouverture de l'application Potato
             // On tente d'ajouter le paramètre 'text'
-            const potatoUrl = `potato://resolve?domain=${targetPotatoUser}&text=${encodedMessage}`;
+            const potatoUrl = `https://potato://resolve?domain=${targetPotatoUser}&text=${encodedMessage}`;
             
             // 3. On ouvre ce lien (Telegram va demander "Ouvrir Potato?" -> OUI)
             tg.openLink(potatoUrl);
