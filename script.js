@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             farm: '🔮 Wizard trees 🔮',
                             promoEligible: true,
                             type: 'Weed',
-                            image: 'ZangBangerProduct.JPG',
+                            image: 'ZangBangerProduct.jpg',
                             video: 'VideoCali2.mp4',
                             description: 'Ultra rare - 27.33% THC \n ( Sherbanger #22 x Zangria )',
                             tarifs: [
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             farm: '🔮 Wizard trees 🔮',
                             promoEligible: false,
                             type: 'Weed',
-                            image: 'PotionProduct.JPG',
+                            image: 'PotionProduct.jpg',
                             video: 'VideoCali1.mp4',
                             description: 'Batch 09/09/2025 \n ( Limelight x Blackmagic )',
                             tarifs: [
@@ -658,7 +658,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // --- FIN MODIFICATION ---
 
         qualityFilter.innerHTML = qualities.map(q => `<option value="${q}">${q === 'all' ? 'LES SELECTION DU CHEF' : q}</option>`).join('');
-        farmFilter.innerHTML = farms.map(farm => `<option value="${farm}">${farm === 'all' ? '👨‍🌾 -  Les farms' : farm}</option>`).join('');
+        farmFilter.innerHTML = farms.map(farm => `<option value="${farm}">${farm === 'all' ? '👨‍🌾  -  Les farms' : farm}</option>`).join('');
 
         searchFilter.addEventListener('input', (e) => {
             currentFilters.searchTerm = e.target.value;
