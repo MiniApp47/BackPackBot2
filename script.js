@@ -163,6 +163,58 @@ document.addEventListener('DOMContentLoaded', function () {
                     ]
                 }
             ]
+        },
+         // --- Catégorie 2: V.V.S TANGER ---
+         {
+            id: 'HASH',
+            name: 'Hash',
+            farm: '',
+            type: 'Hash',
+            quality: 'Hash',
+            image: 'CategExctra.png', // Image de la catégorie
+
+            farms: [
+                {
+                    id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                    name: 'Wizard trees 🔮',
+                    image: 'Wizard4.png', // Mets une image de farm si tu veux
+                    badgeText: '2 produits',
+                    products: [
+                        {
+                            id: 'ZangBanger',
+                            flag: '🇺🇸',
+                            name: '🍇 Zang Banger 🌪',
+                            farm: '🔮 Wizard trees 🔮',
+                            promoEligible: true,
+                            type: 'Weed',
+                            image: 'ZangBangerProduct.jpg',
+                            video: 'VideoCali2.mp4',
+                            description: 'Ultra rare - 27.33% THC \n ( Sherbanger #22 x Zangria )',
+                            tarifs: [
+                                { weight: '3,5g', price: 130.00 },
+                                { weight: '7g', price: 250.00 },
+                                { weight: '10,5g', price: 350.00 },
+                            ]
+                        },
+                        {
+                            id: 'Potion',
+                            flag: '🇺🇸',
+                            name: '🚀 Potion ✨',
+                            farm: '🔮 Wizard trees 🔮',
+                            promoEligible: false,
+                            type: 'Weed',
+                            image: 'PotionProduct.jpg',
+                            video: 'VideoCali1.mp4',
+                            description: 'Batch 09/09/2025 \n ( Limelight x Blackmagic )',
+                            tarifs: [
+                                { weight: '3,5g', price: 130.00 },
+                                { weight: '7g', price: 250.00 },
+                                { weight: '10,5g', price: 350.00 },
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ];
 
@@ -987,40 +1039,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Clic sur "Confirmer la commande" (VERSION POTATO)
-    /*     if (target.closest('#confirm-order-button')) {
+        if (target.closest('#confirm-order-button')) {
             // 1. Remplace 'TON_PSEUDO_POTATO' par ton VRAI pseudo Potato.
             const targetPotatoUser = 'BPDiSPENSARY';
 
             let message = formatOrderMessage();
-            message = message.replace(//g, '');
+            message = message.replace(/\*/g, '');
             const encodedMessage = encodeURIComponent(message);
 
-            // 2. On construit le lien Potato.
+           // 2. On construit le lien Potato.  https://dympt.org/ - `https://potato.im/p/u/${targetPotatoUser}?text=${encodedMessage}`;
+
             // (Utilise 'p/u/' pour un compte utilisateur, ou 'p/s/' pour un bot)
-            const potatoUrl = `https://potato.im/p/u/${targetPotatoUser}?text=${encodedMessage}`;
+            const potatoUrl = `https://dympt.org/p/u/${targetPotatoUser}?text=${encodedMessage}`;
 
             // 3. On utilise la même fonction pour ouvrir le lien
             tg.openLink(potatoUrl);
-        } */
-
-        // Clic sur "Confirmer la commande" (VERSION POTATO)
-        if (target.closest('#confirm-order-button')) {
-            
-            // 1. C'est ton pseudo (SANS LE @)
-            const targetPotatoUser = 'BPDiSPENSARY'; 
-
-            let message = formatOrderMessage();
-            message = message.replace(/\*/g, ''); 
-            const encodedMessage = encodeURIComponent(message);
-            
-            // 2. On construit le lien avec le "custom URL scheme"
-            // Ça force l'ouverture de l'application Potato
-            // On tente d'ajouter le paramètre 'text'
-            const potatoUrl = `https://potato://resolve?domain=${targetPotatoUser}&text=${encodedMessage}`;
-            
-            // 3. On ouvre ce lien (Telegram va demander "Ouvrir Potato?" -> OUI)
-            tg.openLink(potatoUrl);
         }
+
     });
 
     // --- INITIALISATION DE L'APP ---
