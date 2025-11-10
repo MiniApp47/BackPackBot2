@@ -658,7 +658,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // --- FIN MODIFICATION ---
 
         qualityFilter.innerHTML = qualities.map(q => `<option value="${q}">${q === 'all' ? 'LES SELECTION DU CHEF' : q}</option>`).join('');
-        farmFilter.innerHTML = farms.map(farm => `<option value="${farm}">${farm === 'all' ? '👨‍🌾  -  Les farms' : farm}</option>`).join('');
+        farmFilter.innerHTML = farms.map(farm => `<option value="${farm}">${farm === 'all' ? '👨‍🌾 Les farms' : farm}</option>`).join('');
 
         searchFilter.addEventListener('input', (e) => {
             currentFilters.searchTerm = e.target.value;
