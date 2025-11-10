@@ -458,13 +458,12 @@ document.addEventListener('DOMContentLoaded', function () {
             productListContainer.innerHTML = '<p class="no-results">Farm non trouvée.</p>';
             return;
         }
-
         const filteredProducts = farm.products.filter(product => {
             const searchMatch = product.name.toLowerCase().includes(currentFilters.searchTerm.toLowerCase());
-            const qualityMatch = currentFilters.quality === 'all' || product.quality === currentFilters.quality;
+            // On a supprimé 'qualityMatch'. Le choix de la catégorie suffit.
             const farmMatch = currentFilters.farm === 'all' || product.farm === currentFilters.farm;
 
-            return searchMatch && qualityMatch && farmMatch;
+            return searchMatch && farmMatch; // On retourne sans le qualityMatch
         });
 
         productListContainer.innerHTML = '';
@@ -700,22 +699,22 @@ document.addEventListener('DOMContentLoaded', function () {
         const allNestedProducts = appData.flatMap(category => category.farms.flatMap(farm => farm.products));
 
         // --- MODIFICATION ---
-   const categoryQualities = appData.map(c => c.quality);
+/*    const categoryQualities = appData.map(c => c.quality);
         const productQualities = allNestedProducts.map(p => p.quality);
         const qualities = ['all', ...new Set([...categoryQualities, ...productQualities])];
 
         const categoryFarms = appData.map(c => c.farm);
         const productFarms = allNestedProducts.map(p => p.farm);
-        const farms = ['all', ...new Set([...categoryFarms, ...productFarms])];
+        const farms = ['all', ...new Set([...categoryFarms, ...productFarms])]; */
         // --- FIN MODIFICATION ---
 
-      /*   // On ne prend les "qualities" QUE des catégories
+   // On ne prend les "qualities" QUE des catégories
         const categoryQualities = appData.map(c => c.quality);
         const qualities = ['all', ...new Set(categoryQualities)];
 
         // On ne prend les "farms" QUE des produits (c'est ce que tu filtres)
         const productFarms = allNestedProducts.map(p => p.farm);
-        const farms = ['all', ...new Set(productFarms)]; */
+        const farms = ['all', ...new Set(productFarms)];
 
         qualityFilter.innerHTML = qualities.map(q => `<option value="${q}">${q === 'all' ? 'LES SELECTION DU CHEF' : q}</option>`).join('');
         farmFilter.innerHTML = farms.map(farm => `<option value="${farm}">${farm === 'all' ? '👨‍🌾  -  Les farms' : farm}</option>`).join('');
