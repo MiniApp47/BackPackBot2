@@ -1050,7 +1050,7 @@ document.addEventListener('DOMContentLoaded', function () {
            // 2. On construit le lien Potato.  https://dympt.org/ - `https://potato.im/p/u/${targetPotatoUser}?text=${encodedMessage}`;
 
             // (Utilise 'p/u/' pour un compte utilisateur, ou 'p/s/' pour un bot)
-            const potatoUrl = `https://dympt.org/p/u/${targetPotatoUser}?text=${encodedMessage}`;
+            const potatoUrl = `https://dympt.org/${targetPotatoUser}?text=${encodedMessage}`;
 
             // 3. On utilise la même fonction pour ouvrir le lien
             tg.openLink(potatoUrl);
