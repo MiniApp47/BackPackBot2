@@ -270,6 +270,7 @@
             background: var(--secondary-bg-color);
             border-radius: 10px;
             margin-top: 3vh;
+            justify-content: center;
         }
 
         .filter-select-wrapper::after {
@@ -285,18 +286,11 @@
 
         .filter-input-wrapper input,
         .filter-select-wrapper select {
-            width: 100%;
-
-            /* --- MODIFICATION --- */
-            /* On décompose le padding pour mieux le contrôler */
+          
             padding-top: 15px;
             padding-bottom: 15px;
             padding-left: 50px;
-            /* Espace pour l'icône à gauche */
             padding-right: 40px;
-            /* Espace pour la flèche à droite */
-            /* --- FIN MODIFICATION --- */
-
             border: none;
             background: transparent;
             color: var(--text-color);
@@ -306,12 +300,10 @@
 
             /* --- AJOUTS POUR iOS --- */
             border-radius: 0;
-            /* Empêche le select de déborder du wrapper sur iOS */
             line-height: normal;
-            /* Reset la hauteur de ligne d'iOS */
             height: auto;
-            /* Reset la hauteur d'iOS */
-        }
+            position: relative;
+            z-index: 1;        }
 
         .filter-input-wrapper input::placeholder {
             color: var(--hint-color);
@@ -326,6 +318,7 @@
             transform: translateY(-50%);
             color: var(--hint-color);
             margin-right: 3.5vh;
+            z-index: 2; /* <-- AJOUTE ÇA */
         }
 
 
