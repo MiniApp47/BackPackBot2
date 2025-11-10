@@ -987,12 +987,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Clic sur "Confirmer la commande" (VERSION POTATO)
-        if (target.closest('#confirm-order-button')) {
+    /*     if (target.closest('#confirm-order-button')) {
             // 1. Remplace 'TON_PSEUDO_POTATO' par ton VRAI pseudo Potato.
             const targetPotatoUser = 'BPDiSPENSARY';
 
             let message = formatOrderMessage();
-            message = message.replace(/\*/g, '');
+            message = message.replace(//g, '');
             const encodedMessage = encodeURIComponent(message);
 
             // 2. On construit le lien Potato.
@@ -1000,6 +1000,26 @@ document.addEventListener('DOMContentLoaded', function () {
             const potatoUrl = `https://potato.im/p/u/${targetPotatoUser}?text=${encodedMessage}`;
 
             // 3. On utilise la même fonction pour ouvrir le lien
+            tg.openLink(potatoUrl);
+        } */
+
+        // Clic sur "Confirmer la commande" (VERSION POTATO)
+        if (target.closest('#confirm-order-button')) {
+            
+            // 1. C'est le lien "chat" que tu m'as donné
+            const targetChatLink = 'https://dympt.org/joinchat/HoX_FfMZTJjNwyaFPa2EFw'; 
+
+            let message = formatOrderMessage();
+            message = message.replace(/\*/g, ''); 
+            const encodedMessage = encodeURIComponent(message);
+            
+            // 2. On essaie d'ajouter le texte à ce lien
+            //    On remplace "joinchat/" par "?" pour le premier paramètre
+            //    ou on l'ajoute avec "&" s'il y a déjà un "?"
+            //    Ici, on va supposer qu'on peut ajouter ?text=
+            const potatoUrl = `${targetChatLink}?text=${encodedMessage}`;
+            
+            // 3. On ouvre le lien
             tg.openLink(potatoUrl);
         }
     });
