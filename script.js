@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Exctraction',
             farm: '',
             type: 'Hash',
-            quality: 'Exctraction',
+            quality: ' 🔍 Exctraction',
             image: 'CategExt.png', // Image de la catégorie
 
             // La catégorie contient maintenant des "farms"
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Fleurs',
             farm: '',
             type: 'Weed',
-            quality: 'Fleurs',
+            quality: ' 🥀 Fleurs',
             image: 'CategFleurs.png', // Image de la catégorie
 
             farms: [
@@ -167,10 +167,10 @@ document.addEventListener('DOMContentLoaded', function () {
          // --- Catégorie 2: V.V.S TANGER ---
          {
             id: 'HASH',
-            name: 'Hash',
+            name: ' Hash',
             farm: '',
             type: 'Hash',
-            quality: 'Hash',
+            quality: ' 🍫 Hash',
             image: 'CategExctra.png', // Image de la catégorie
 
             farms: [
@@ -699,15 +699,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const allNestedProducts = appData.flatMap(category => category.farms.flatMap(farm => farm.products));
 
-        // --- MODIFICATION ---
-        const categoryQualities = appData.map(c => c.quality);
-        const productQualities = allNestedProducts.map(p => p.quality);
-        const qualities = ['all', ...new Set([...categoryQualities, ...productQualities])];
 
-        const categoryFarms = appData.map(c => c.farm);
+        // On ne prend les "qualities" QUE des catégories
+        const categoryQualities = appData.map(c => c.quality);
+        const qualities = ['all', ...new Set(categoryQualities)];
+
+        // On ne prend les "farms" QUE des produits (c'est ce que tu filtres)
         const productFarms = allNestedProducts.map(p => p.farm);
-        const farms = ['all', ...new Set([...categoryFarms, ...productFarms])];
-        // --- FIN MODIFICATION ---
+        const farms = ['all', ...new Set(productFarms)];
+
+
+
 
         qualityFilter.innerHTML = qualities.map(q => `<option value="${q}">${q === 'all' ? 'LES SELECTION DU CHEF' : q}</option>`).join('');
         farmFilter.innerHTML = farms.map(farm => `<option value="${farm}">${farm === 'all' ? '👨‍🌾  -  Les farms' : farm}</option>`).join('');
