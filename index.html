@@ -69,6 +69,7 @@
         .page-header .title {
             font-size: 1.2rem;
             font-weight: 700;
+            font-family: Optima, sans-serif;
         }
 
         .close-button,
@@ -116,11 +117,13 @@
         #page-loader .app-name {
             font-size: 1.5rem;
             font-weight: 700;
+            font-family: Chalkduster, fantasy;
         }
 
         #page-loader .loading-text {
             color: var(--hint-color);
             margin-top: 10px;
+            font-family: URW Chancery L, cursive;
         }
 
         /* --- Page d'accueil --- */
@@ -181,6 +184,7 @@
             /* MODIFIÉ pour l'afficher */
             align-items: center;
             justify-content: center;
+            box-shadow: 0px 0px 10px 2px red;
         }
 
         #quality-filter {
@@ -188,7 +192,7 @@
             text-align: center;
             padding-left: 0px;
             height: 7vh;
-            font-size:  1.8vh;
+            font-size: 1.8vh;
             margin-left: 2vh;
         }
 
@@ -282,26 +286,31 @@
         .filter-input-wrapper input,
         .filter-select-wrapper select {
             width: 100%;
-            
+
             /* --- MODIFICATION --- */
             /* On décompose le padding pour mieux le contrôler */
             padding-top: 15px;
             padding-bottom: 15px;
-            padding-left: 50px;  /* Espace pour l'icône à gauche */
-            padding-right: 40px; /* Espace pour la flèche à droite */
+            padding-left: 50px;
+            /* Espace pour l'icône à gauche */
+            padding-right: 40px;
+            /* Espace pour la flèche à droite */
             /* --- FIN MODIFICATION --- */
-            
+
             border: none;
             background: transparent;
             color: var(--text-color);
             font-size: 1rem;
-            appearance: none; 
+            appearance: none;
             -webkit-appearance: none;
-            
+
             /* --- AJOUTS POUR iOS --- */
-            border-radius: 0; /* Empêche le select de déborder du wrapper sur iOS */
-            line-height: normal; /* Reset la hauteur de ligne d'iOS */
-            height: auto; /* Reset la hauteur d'iOS */
+            border-radius: 0;
+            /* Empêche le select de déborder du wrapper sur iOS */
+            line-height: normal;
+            /* Reset la hauteur de ligne d'iOS */
+            height: auto;
+            /* Reset la hauteur d'iOS */
         }
 
         .filter-input-wrapper input::placeholder {
@@ -318,7 +327,7 @@
             color: var(--hint-color);
         }
 
-      
+
         .product-grid {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
@@ -332,33 +341,34 @@
             border-radius: 15px;
             overflow: hidden;
             cursor: pointer;
-            position: relative; 
+            position: relative;
         }
 
-.card-badge {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3); /* Petite ombre */
-    color: white;
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            /* Petite ombre */
+            color: white;
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
 
-.product-flag {
-    margin-left: 5px;
-    font-size: 3vh;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #2c2c2edb;
-    height: auto;
-    width: 35px;
-    border-radius: 20%;
-    }
+        .product-flag {
+            margin-left: 5px;
+            font-size: 3vh;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #2c2c2edb;
+            height: auto;
+            width: 35px;
+            border-radius: 20%;
+        }
 
         .product-card img {
             width: 100%;
@@ -425,13 +435,12 @@
             background: #8080807d;
             border-radius: 20px;
             /* height: 5vh; */
-            width: 15vh;
+            width: 10vh;
             color: red;
             padding: 1vh;
             border: none;
-            /* Ajout pour que ça ressemble à un bouton */
+            box-shadow: 0px 0px 10px 2px #d30000;
             cursor: pointer;
-            /* Ajout pour que ça ressemble à un bouton */
         }
 
         .nav-item.active {
@@ -517,7 +526,7 @@
             flex-direction: column;
             border-radius: 20px;
             font-family: New Century Schoolbook, TeX Gyre Schola, serif;
-    padding: 1vh;
+            padding: 1vh;
 
         }
 
@@ -572,14 +581,28 @@
         }
 
 
-        .cart-total {
+        #page-confirmation .cart-total {
             background: var(--secondary-bg-color);
             padding: 15px;
             border-radius: 10px;
             margin-top: 20px;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             align-items: center;
+            font-family: Optima, sans-serif;
+        }
+
+        #page-cart .cart-total {
+            background: var(--secondary-bg-color);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            font-family: Optima, sans-serif;
         }
 
         .cart-actions {
@@ -740,6 +763,38 @@
             font-family: Impact, fantasy;
         }
 
+        /* --- NOUVEAU STYLE POUR LA PAGE INFO --- */
+        #page-info .page-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 1vh;
+        }
+
+        #page-info .contact-logo {
+            width: 100px;
+            height: 15vh;
+            width: 15vh;
+            margin-bottom: 6vh;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px 2px red;
+            margin-top: 2vh;
+        }
+
+        #page-info .contact-card {
+            background: rgba(44, 44, 46, 0.8);
+            /* Fond semi-transparent */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-top: 2vh;
+
+        }
+
 
 
 
@@ -771,6 +826,8 @@
             max-width: 400px;
             padding: 20px;
             box-sizing: border-box;
+            margin-top: 5vh;
+
         }
 
         .contact-links-list a {
@@ -834,8 +891,6 @@
         /* --- NOUVEAU STYLE POUR L'ACCORDÉON --- */
         .accordion-container {
             width: 100%;
-            margin-bottom: 20px;
-            /* Espace avant la ligne */
             text-align: center;
 
         }
@@ -860,6 +915,7 @@
             color: var(--text-color);
             cursor: pointer;
             text-align: left;
+            height: 11vh;
         }
 
         .accordion-header .accordion-icon {
@@ -873,6 +929,7 @@
 
         .accordion-header span {
             flex-grow: 1;
+            text-align: center;
             /* Pousse la flèche à droite */
         }
 
@@ -912,19 +969,134 @@
             margin: 0 0 20px 0;
             /* Espace avant les liens */
         }
+
+        /* --- NOUVEAUX STYLES (Confirmation) --- */
+        .promo-container,
+        .payment-selector {
+            margin-top: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--tertiary-bg-color);
+        }
+
+        #promo-input-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        #promo-code-input {
+            flex-grow: 1;
+            padding: 15px;
+            border: none;
+            background: var(--secondary-bg-color);
+            border-radius: 10px;
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        #apply-promo-btn {
+            padding: 15px;
+            /* S'assurer qu'il a la même hauteur */
+            flex-shrink: 0;
+            /* Empêche le bouton de rétrécir */
+        }
+
+        #promo-applied-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--tertiary-bg-color);
+            padding: 15px;
+            border-radius: 10px;
+            color: var(--green-color);
+            font-weight: 500;
+        }
+
+        #promo-applied-container span {
+            margin-right: 10px;
+        }
+
+        #remove-promo-btn {
+            background: none;
+            border: none;
+            color: var(--red-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            flex-shrink: 0;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .payment-btn {
+            background: var(--secondary-bg-color);
+            color: var(--hint-color);
+            border: 2px solid var(--secondary-bg-color);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .payment-btn.active {
+            color: var(--text-color);
+            border-color: #489fc9;
+            /* Ta couleur accent */
+            background-color: var(--tertiary-bg-color);
+        }
+
+        /* Style pour le nouveau résumé du panier */
+        /*  #confirmation-summary .summary-line {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1rem;
+            padding: 5px 0;
+        } */
+        #confirmation-summary .summary-line.total {
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-top: 1px solid var(--tertiary-bg-color);
+            margin-top: 10px;
+            padding-top: 10px;
+            width: 80%;
+            text-align: center;
+        }
+
+        #confirmation-summary .summary-line.discount {
+            color: var(--green-color);
+        }
     </style>
 </head>
 
 <body>
     <div id="page-contact" class="page">
         <div class="page-content">
-            <img src="LogoReel.png" alt="Logo" class="contact-logo">
+            <img src="LogoReel.PNG" alt="Logo" class="contact-logo">
+            <div class="contact-card">
+
+                <div id="contact-links-container" class="contact-links-list">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="page-info" class="page">
+        <div class="page-content">
+            <img src="LogoReel.PNG" alt="Logo" class="contact-logo">
             <div class="contact-card">
 
                 <div class="accordion-container">
                     <div class="accordion-item">
                         <button class="accordion-header">
-                            <img src="LogoReel.png" alt="logo" class="accordion-icon">
+                            <p style="
+                        height: 4vh;
+                        width: 4vh;
+                        font-size: 3vh;">🛵</p>
                             <span>DELIVERY </span>
                             <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
@@ -941,7 +1113,10 @@
 
                     <div class="accordion-item">
                         <button class="accordion-header">
-                            <img src="LogoReel.png" alt="logo" class="accordion-icon">
+                            <p style="
+                        height: 4vh;
+                        width: 4vh;
+                        font-size: 3vh;">🏢</p>
                             <span>MEET-UP</span>
                             <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
@@ -957,7 +1132,10 @@
 
                     <div class="accordion-item">
                         <button class="accordion-header">
-                            <img src="LogoReel.png" alt="logo" class="accordion-icon">
+                            <p style="
+                        height: 4vh;
+                        width: 4vh;
+                        font-size: 3vh;">⏱️</p>
                             <span>HORAIRES</span>
                             <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
@@ -970,10 +1148,24 @@
                             </p>
                         </div>
                     </div>
-                </div>
-                <hr class="contact-divider">
-
-                <div id="contact-links-container" class="contact-links-list">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <p style="
+                        height: 4vh;
+                        width: 4vh;
+                        font-size: 3vh;">📦</p>
+                            <span>COLIS</span>
+                            <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p>
+                                Envoi dans toutes la france !!
+                                <br><br> 🏆 Accès au canal VIP après votre première commandes
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1162,10 +1354,33 @@
             <h4>Détail des articles</h4>
             <div id="confirmation-items-list">
             </div>
-            <div class="cart-total">
+
+            <div class="promo-container">
+                <h4>Code Promo</h4>
+                <div id="promo-input-container">
+                    <input type="text" id="promo-code-input" placeholder="Votre code...">
+                    <button id="apply-promo-btn" class="secondary-action-btn">Appliquer</button>
+                </div>
+                <div id="promo-applied-container" style="display:none;">
+                    <span id="promo-applied-text"></span>
+                    <button id="remove-promo-btn">×</button>
+                </div>
+            </div>
+
+            <div class="payment-selector">
+                <h4>Paiement</h4>
+                <div class="payment-options">
+                    <button class="payment-btn active" data-method="Espèce">💵 Espèce</button>
+                    <button class="payment-btn" data-method="Crypto">₿ Crypto</button>
+                </div>
+            </div>
+
+            <div class="cart-total" id="confirmation-summary">
+            </div>
+            <!--   <div class="cart-total">
                 <span>💰 Total final:</span>
                 <span id="confirmation-final-price">0.00€</span>
-            </div>
+            </div> -->
         </div>
         <div class="cart-actions">
             <button id="confirmation-modify-order" class="secondary-action-btn">✏️ Modifier</button>
@@ -1181,6 +1396,12 @@
             </svg>
             <p style="
             margin: inherit;"> HOME </p>
+        </button>
+        <button id="nav-info" data-page="page-info" class="nav-item">
+            <svg width="20" height="20">
+                <use href="#icon-info" />
+            </svg>
+            <p style="margin: inherit;"> INFO </p>
         </button>
         <button id="nav-contact" data-page="page-contact" class="nav-item">
             <svg width="20" height="20">

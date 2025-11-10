@@ -33,9 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     products: [
                         {
                             id: 'Papaya',
-                            flag: '🇺🇸', 
+                            flag: '🇺🇸',
                             name: '🍑 Papaya 🍍',
                             farm: '❄️ Frosty hash ❄️',
+                            promoEligible: true,
                             type: 'Hash',
                             image: 'Neujeu3.png',
                             video: 'VideoNejeu1.mp4',
@@ -47,9 +48,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         },/* changer la police, potato redirect, LiveRosin 3 varieter differente et certainnee scelle on peut pas cliquer dessus, add drapeau sur les image : usa    */
                         {
                             id: 'Bluezushi',
-                            flag: '🇺🇸', 
+                            flag: '🇺🇸',
                             name: '🍣 Blue Zushi 🍱',
                             farm: '❄️ Frosty hash ❄️',
+                            promoEligible: true,
                             type: 'Hash',
                             image: 'Neujeu4.png',
                             video: 'VideoNejeu2.mp4',
@@ -61,9 +63,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'GakPak',
-                            flag: '🇺🇸', 
+                            flag: '🇺🇸',
                             name: '🍑 Gak Pak 🍓',
                             farm: '❄️ Frosty hash ❄️',
+                            promoEligible: true,
                             type: 'Hash',
                             image: 'Nejeu1.jpeg',
                             video: 'MousseauStar.mp4',
@@ -75,9 +78,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Zkittlez',
-                            flag: '🇺🇸', 
+                            flag: '🇺🇸',
                             name: 'Zkittlez',
                             farm: '❄️ Frosty hash ❄️',
+                            promoEligible: true,
                             type: 'Hash',
                             image: 'Nejeu1.jpeg',
                             video: 'MousseauStar.mp4',
@@ -89,9 +93,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Watermelon Tourmaline',
-                            flag: '🇺🇸', 
+                            flag: '🇺🇸',
                             name: '🍉 Watermelon tourmaline 🍒',
                             farm: '❄️ Frosty hash ❄️',
+                            promoEligible: true,
                             type: 'Hash',
                             image: 'Nejeu1.jpeg',
                             video: 'MousseauStar.mp4',
@@ -125,9 +130,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     products: [
                         {
                             id: 'ZangBanger',
-                            flag: '🇺🇸', 
+                            flag: '🇺🇸',
                             name: '🍇 Zang Banger 🌪',
                             farm: '🔮 Wizard trees 🔮',
+                            promoEligible: true,
                             type: 'Weed',
                             image: 'Zang.png',
                             video: 'VideoCali2.mp4',
@@ -140,9 +146,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Potion',
-                            flag: '🇺🇸', 
+                            flag: '🇺🇸',
                             name: '🚀 Potion ✨',
                             farm: '🔮 Wizard trees 🔮',
+                            promoEligible: false,
                             type: 'Weed',
                             image: 'Cali2.png',
                             video: 'VideoCali1.mp4',
@@ -169,6 +176,23 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentView = 'categories'; // 'categories', 'farms', ou 'products'
     let currentCategoryId = null; // Garde en mémoire la catégorie sélectionnée
     let currentFarmId = null; // Garde en mémoire la farm sélectionnée
+    let appliedPromo = null; // Pour suivre le code promo
+    let paymentMethod = 'Espèce'; // Méthode de paiement par défaut
+
+    // --- DÉFINIS TES CODES PROMO ICI ---
+    const validPromoCodes = {
+        "REDUC10": {
+            type: 'percent', // 'percent' (pourcentage) ou 'fixed' (fixe)
+            value: 20,       // 20%
+            appliesTo: 'eligible' // 'eligible' (articles marqués) ou 'all' (tout le panier)
+        },
+        "WELCOME5": {
+            type: 'percent',   // 20%
+            value: 20,        // 20%
+            appliesTo: 'all' // S'applique à tout
+        }
+        // Ajoute d'autres codes ici
+    };
 
 
     // --- SÉLECTEURS D'ÉLÉMENTS DU DOM ---
@@ -201,21 +225,30 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- NAVIGATION ---
     function showPage(pageId) {
         pages.forEach(p => p.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
+        // S'assure que la page existe avant de l'activer
+        const page = document.getElementById(pageId);
+        if (page) {
+            page.classList.add('active');
+        }
 
         // --- GESTION AUTOMATIQUE DES BOUTONS NAV ---
         const homeNav = document.getElementById('nav-menu');
+        const infoNav = document.getElementById('nav-info'); // On ajoute l'info
         const contactNav = document.getElementById('nav-contact');
-        
-        // Si on affiche la page contact, on met le bouton contact en actif
+
+        // On reset tout
+        homeNav.classList.remove('active');
+        infoNav.classList.remove('active');
+        contactNav.classList.remove('active');
+
+        // On active le bon
         if (pageId === 'page-contact') {
-            homeNav.classList.remove('active');
             contactNav.classList.add('active');
-        } 
-        // Pour TOUTES les autres pages (home, produit, panier, etc.), on met 'home' en actif
-        else {
+        } else if (pageId === 'page-info') {
+            infoNav.classList.add('active');
+        } else {
+            // Pour page-home, page-produit, panier, etc.
             homeNav.classList.add('active');
-            contactNav.classList.remove('active');
         }
     }
 
@@ -350,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (farm.badgeText) {
                 badgeHTML = `<div class="card-badge">${farm.badgeText}</div>`;
             }
-            
+
             card.innerHTML = `
             <div class="card-badge">${productCount} produit${productCount > 1 ? 's' : ''}</div>
             
@@ -483,30 +516,107 @@ document.addEventListener('DOMContentLoaded', function () {
         updateCartCount();
     }
 
-    // Affiche la page de confirmation (inchangé)
+    // Affiche la page de confirmation et gere les codes promo
     function renderConfirmation() {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        const totalPrice = cart.reduce((sum, item) => sum + item.totalPrice, 0);
 
+        // --- Logique de calcul des prix ---
+        let subTotal = cart.reduce((sum, item) => sum + item.totalPrice, 0);
+        let discount = 0;
+        let discountableAmount = 0;
+
+        if (appliedPromo) {
+            const promo = validPromoCodes[appliedPromo];
+
+            if (promo.appliesTo === 'eligible') {
+                // Calcul sur les articles éligibles
+                cart.forEach(item => {
+                    const product = getProductById(item.productId);
+                    if (product && product.promoEligible) {
+                        discountableAmount += item.totalPrice;
+                    }
+                });
+            } else {
+                // Calcul sur tout le panier
+                discountableAmount = subTotal;
+            }
+
+            if (promo.type === 'percent') {
+                discount = (discountableAmount * promo.value) / 100;
+            } else { // 'fixed'
+                discount = promo.value;
+            }
+        }
+
+        // Assure que la réduc ne dépasse pas le montant
+        if (discount > subTotal) {
+            discount = subTotal;
+        }
+
+        const totalPrice = subTotal - discount;
+        // --- Fin de la logique de calcul ---
+
+        // Mise à jour du résumé (panier en haut)
         document.getElementById('confirmation-items-count').innerText = `${totalItems} article${totalItems > 1 ? 's' : ''}`;
         document.getElementById('confirmation-total-price').innerText = `${totalPrice.toFixed(2)}€`;
 
+        // Remplissage de la liste des articles (inchangé)
         const itemsList = document.getElementById('confirmation-items-list');
         itemsList.innerHTML = cart.map((item, index) => `
              <div class="cart-item">
                 <img src="${item.image}" alt="${item.name}">
                 <div class="item-details">
-                    <div class="name"> ${item.name}</div>
-                    <div class="quantity">Quantité: ${item.quantity}x ${item.weight}</div>
-                    <div class="price">Prix unitaire: ${item.unitPrice.toFixed(2)}€</div>
+                    <div>${index + 1}. ${item.name}</div>
+                    <div>Quantité: ${item.quantity}x ${item.weight}</div>
+                    <div>Prix unitaire: ${item.unitPrice.toFixed(2)}€</div>
                 </div>
             </div>
         `).join('');
 
-        document.getElementById('confirmation-final-price').innerText = `${totalPrice.toFixed(2)}€`;
+        // Mise à jour de l'UI Promo
+        const promoInputContainer = document.getElementById('promo-input-container');
+        const promoAppliedContainer = document.getElementById('promo-applied-container');
+        if (appliedPromo) {
+            promoInputContainer.style.display = 'none';
+            promoAppliedContainer.style.display = 'flex';
+            document.getElementById('promo-applied-text').innerText = `Code "${appliedPromo}" appliqué !`;
+        } else {
+            promoInputContainer.style.display = 'flex';
+            promoAppliedContainer.style.display = 'none';
+            document.getElementById('promo-code-input').value = ''; // Reset l'input
+        }
+
+        // Mise à jour de l'UI Paiement
+        document.querySelectorAll('.payment-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.method === paymentMethod);
+        });
+
+        // Mise à jour du résumé final
+        const summaryContainer = document.getElementById('confirmation-summary');
+        let summaryHTML = `
+            <div class="summary-line">
+                <span>Sous-total:</span>
+                <span>${subTotal.toFixed(2)}€</span>
+            </div>
+        `;
+        if (discount > 0) {
+            summaryHTML += `
+            <div class="summary-line discount">
+                <span>Réduction:</span>
+                <span>-${discount.toFixed(2)}€</span>
+            </div>
+            `;
+        }
+        summaryHTML += `
+            <div class="summary-line total">
+                <span>💰 Total final:</span>
+                <span>${totalPrice.toFixed(2)}€</span>
+            </div>
+        `;
+        summaryContainer.innerHTML = summaryHTML;
+
         showPage('page-confirmation');
     }
-
     // Affiche la page de contact (inchangé)
     function renderContactPage() {
         const linksContainer = document.getElementById('contact-links-container');
@@ -631,19 +741,44 @@ document.addEventListener('DOMContentLoaded', function () {
         renderCart();
     }
 
-    // --- FORMATAGE DU MESSAGE DE COMMANDE (inchangé) ---
+    // --- FORMATAGE DU MESSAGE DE COMMANDE (pour gere les promo) ---
     function formatOrderMessage() {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        const totalPrice = cart.reduce((sum, item) => sum + item.totalPrice, 0);
+
+        // Recalcul des prix pour le message
+        let subTotal = cart.reduce((sum, item) => sum + item.totalPrice, 0);
+        let discount = 0;
+        if (appliedPromo) {
+            const promo = validPromoCodes[appliedPromo];
+            let discountableAmount = 0;
+            if (promo.appliesTo === 'eligible') {
+                cart.forEach(item => {
+                    const product = getProductById(item.productId);
+                    if (product && product.promoEligible) {
+                        discountableAmount += item.totalPrice;
+                    }
+                });
+            } else {
+                discountableAmount = subTotal;
+            }
+            if (promo.type === 'percent') {
+                discount = (discountableAmount * promo.value) / 100;
+            } else {
+                discount = promo.value;
+            }
+        }
+        if (discount > subTotal) discount = subTotal;
+        const totalPrice = subTotal - discount;
+        // Fin recalcul
+
         const date = new Date();
         const formattedDate = `${date.getDate()} ${date.toLocaleString('fr-FR', { month: 'long' })} ${date.getFullYear()} a ${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
-
 
         let message = "NOUVELLE COMMANDE\n\n";
         message += "====================\n";
         message += "RESUME:\n";
         message += `- ${totalItems} article${totalItems > 1 ? 's' : ''} commande\n`;
-        message += `- Total: ${totalPrice.toFixed(2)}e \n`;
+        message += `- Méthode de paiement: ${paymentMethod}\n`; // AJOUT
         message += "====================\n";
         message += `DETAIL DES ARTICLES:\n`;
 
@@ -654,7 +789,12 @@ document.addEventListener('DOMContentLoaded', function () {
             message += `\n  Sous-total: ${item.totalPrice.toFixed(2)} EUR`;
         });
 
-        message += `\n\nTOTAL FINAL: ${totalPrice.toFixed(2)} EUR`;
+        message += `\n\n====================\n`;
+        message += `\nSOUS-TOTAL: ${subTotal.toFixed(2)} EUR`;
+        if (discount > 0) {
+            message += `\nREDUCTION (${appliedPromo}): -${discount.toFixed(2)} EUR`; // AJOUT
+        }
+        message += `\nTOTAL FINAL: ${totalPrice.toFixed(2)} EUR`; // AJOUT
         message += " \n-LIVRAISON: A convenir\n";
         message += " \n-CONTACT: Merci de confirmer cette commande\n";
         message += ` \n-Commande passee le: ${formattedDate}\n`;
@@ -687,7 +827,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('search-filter').value = '';
                 document.getElementById('quality-filter').value = 'all';
                 document.getElementById('farm-filter').value = 'all';
-                
+
                 renderHomePage();
             }
 
@@ -705,7 +845,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const accordionItem = accordionHeader.parentElement;
 
             // On ferme les autres items
-            document.querySelectorAll('#page-contact .accordion-item.active').forEach(item => {
+            document.querySelectorAll('#page-info .accordion-item.active').forEach(item => {
                 if (item !== accordionItem) {
                     item.classList.remove('active');
                 }
@@ -767,7 +907,38 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // --- Reste de la logique de clic (panier, etc.) ---
+        // Clic sur "Appliquer" le code promo
+        if (target.closest('#apply-promo-btn')) {
+            const input = document.getElementById('promo-code-input');
+            const code = input.value.toUpperCase(); // Mets en majuscule
+
+            if (validPromoCodes[code]) {
+                appliedPromo = code;
+                tg.HapticFeedback.notificationOccurred('success');
+                showNotification('✅ Code promo appliqué !');
+            } else {
+                appliedPromo = null; // Reset au cas où
+                tg.HapticFeedback.notificationOccurred('error');
+                showNotification('❌ Code promo invalide.');
+            }
+            renderConfirmation(); // Met à jour la page de confirmation
+        }
+
+        // Clic sur "Supprimer" le code promo
+        if (target.closest('#remove-promo-btn')) {
+            appliedPromo = null;
+            showNotification('Code promo retiré.');
+            renderConfirmation(); // Met à jour la page
+        }
+
+        // Clic sur un bouton de paiement
+        if (target.closest('.payment-btn')) {
+            paymentMethod = target.closest('.payment-btn').dataset.method;
+            // Pas besoin de rafraîchir toute la page, juste les boutons
+            document.querySelectorAll('.payment-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.method === paymentMethod);
+            });
+        }
 
         // Clic sur "Ajouter au panier"
         if (target.closest('.add-to-cart-btn')) {
@@ -792,7 +963,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showPage('page-home');
             // La gestion des classes 'active' est maintenant dans showPage
         }
-        
+
         // Clic sur les boutons "retour" (des pages produits, panier...)
         if (target.closest('.back-button')) {
             showPage('page-home');
