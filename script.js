@@ -78,12 +78,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Zkittlez',
-                            flag: '🇺🇸',
-                            name: 'Zkittlez',
+                            flag: '',
+                            name: '🍬 Zkittlez 🍭',
                             farm: '❄️ Frosty hash ❄️',
                             promoEligible: true,
                             type: 'Hash',
-                            image: 'Nejeu1.jpeg',
+                            image: 'Rupture.png',
+                            clickable: false, 
                             video: 'MousseauStar.mp4',
                             description: 'Type d\'exctraction \n Live rosin 70-120u',
                             tarifs: [
@@ -484,6 +485,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const card = document.createElement('div');
             card.className = 'product-card product-item-card';
             card.dataset.productId = product.id;
+
+            if (product.clickable === false) {
+                card.classList.add('unclickable');
+            }
+
             let flagHTML = product.flag ? `<span class="product-flag">${product.flag}</span>` : '';
 
             card.innerHTML = `
@@ -1013,6 +1019,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // 3. Clic sur une carte PRODUIT
         const productCard = target.closest('.product-item-card');
         if (productCard) {
+
+            if (productCard.classList.contains('unclickable')) {
+                return;
+            }
             renderProductPage(productCard.dataset.productId);
             return;
         }
