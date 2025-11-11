@@ -668,6 +668,17 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         summaryContainer.innerHTML = summaryHTML;
 
+        const copyBtn = document.getElementById('copy-order-btn');
+        const contactBtn = document.getElementById('confirm-order-button');
+        
+        // État initial: Copier = Rouge (main), Contacter = Gris (secondary/disabled)
+        copyBtn.classList.add('main-action-btn');
+        copyBtn.classList.remove('secondary-action-btn');
+        
+        contactBtn.classList.add('secondary-action-btn');
+        contactBtn.classList.remove('main-action-btn');
+        contactBtn.disabled = true; // On le re-verrouille
+
         showPage('page-confirmation');
     }
     // Affiche la page de contact (inchangé)
@@ -925,6 +936,27 @@ document.addEventListener('DOMContentLoaded', function () {
     // Clics sur le reste de la page
     document.body.addEventListener('click', function (e) {
         const target = e.target;
+
+        if (target.closest('#copy-order-btn')) {
+            let message = formatOrderMessage();
+            message = message.replace(/\*/g, ''); 
+            
+            copyToClipboard(message);
+            
+            // --- AJOUT : Inverser les styles des boutons ---
+            const copyBtn = document.getElementById('copy-order-btn');
+            const contactBtn = document.getElementById('confirm-order-button');
+
+            // Copier devient Gris (secondary)
+            copyBtn.classList.remove('main-action-btn');
+            copyBtn.classList.add('secondary-action-btn');
+            
+            // Contacter devient Rouge (main) et est activé
+            contactBtn.classList.remove('secondary-action-btn');
+            contactBtn.classList.add('main-action-btn');
+            contactBtn.disabled = false; // <-- ON DÉVERROUILLE LE BOUTON
+            return; // On s'arrête là
+        }
 
         // Gère l'accordéon sur la page contact
         const accordionHeader = target.closest('.accordion-header');

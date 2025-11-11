@@ -143,9 +143,11 @@
 
         .marquee-content span {
             display: inline-block;
-            padding-right: 200px; /* Espace entre les deux phrases */
-            white-space: nowrap; /* Empêche le texte de se couper */
-            font-size: 14px;
+            padding-right: 200px;
+            /* Espace entre les deux phrases */
+            white-space: nowrap;
+            /* Empêche le texte de se couper */
+            font-size: 11px;
 
         }
 
@@ -646,6 +648,14 @@
             border: none;
             font-size: 1rem;
             cursor: pointer;
+        }
+
+        .main-action-btn:disabled,
+        .secondary-action-btn:disabled {
+            background: var(--tertiary-bg-color); /* Un gris foncé */
+            color: var(--hint-color);
+            opacity: 0.6;
+            cursor: not-allowed; /* Change le curseur pour montrer qu'il est bloqué */
         }
 
 
@@ -1190,6 +1200,11 @@
 
     <svg width="0" height="0" style="position:absolute">
         <defs>
+            <symbol id="icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+            </symbol>
             <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -1405,8 +1420,41 @@
             </div> -->
         </div>
         <div class="cart-actions">
+
             <button id="confirmation-modify-order" class="secondary-action-btn">✏️ Modifier</button>
-            <button id="confirm-order-button" class="main-action-btn telegram-button">💬 Contacter sur Potato</button>
+
+            <p class="confirmation-instructions">
+                Cliquez pour copier votre commande, puis contactez-nous :
+            </p>
+
+
+
+            <button id="copy-order-btn" class="main-action-btn"> <svg width="20" height="20">
+                    <use href="#icon-clipboard" />
+                </svg>
+                <span>Étape 1: 📋 Copier la commande </span>
+            </button>
+
+            <button id="confirm-order-button" class="secondary-action-btn telegram-button" disabled>
+                <span>Étape 2: 💬 Contacter sur Potato</span>
+            </button>
+
+
+
+            <!--     <button id="copy-order-btn" class="secondary-action-btn">
+                <span>Étape 1: 📋 Copier la commande </span>
+
+               <svg width="20" height="20"><use href="#icon-clipboard"/></svg>
+ -->
+                <!-- </button>
+
+            <button id="confirm-order-button" class="main-action-btn telegram-button">
+                <span>Étape 2: 💬 Contacter sur Potato</span>
+            </button> -->
+                <!--             <button id="confirmation-modify-order" class="secondary-action-btn">✏️ Modifier</button>
+ -->
+                <!--             <button id="confirm-order-button" class="main-action-btn telegram-button">💬 Contacter sur Potato</button>
+ -->
         </div>
     </div>
 
