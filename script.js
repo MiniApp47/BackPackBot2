@@ -233,17 +233,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- DÉFINIS TES CODES PROMO ICI ---
     const validPromoCodes = {
-        "REDUC10": {
-            type: 'percent', // 'percent' (pourcentage) ou 'fixed' (fixe)
-            value: 20,       // 20%
+        "ACTUPLUG33": {
+            type: 'fixed', // 'percent' (pourcentage) ou 'fixed' (fixe)
+            value: 10,       // 20%
             appliesTo: 'eligible' // 'eligible' (articles marqués) ou 'all' (tout le panier)
         },
-        "WELCOME5": {
+       /*  "WELCOME5": {
             type: 'percent',   // 20%
             value: 20,        // 20%
             appliesTo: 'all' // S'applique à tout
-        }
+        } */
         // Ajoute d'autres codes ici
+
+        // ADD CUMULABLE FONCTION POUR PLUTARD
     };
 
 
@@ -1057,7 +1059,8 @@ document.addEventListener('DOMContentLoaded', function () {
            // 2. On construit le lien Potato.  https://dympt.org/ - `https://potato.im/p/u/${targetPotatoUser}?text=${encodedMessage}`;
 
             // (Utilise 'p/u/' pour un compte utilisateur, ou 'p/s/' pour un bot)
-            const potatoUrl = `https://dympt.org/${targetPotatoUser}?text=${encodedMessage}`;
+            //const potatoUrl = `https://dympt.org/${targetPotatoUser}?text=${encodedMessage}`;
+            const potatoUrl = `https://dympt.org/p/u/${targetPotatoUser}?text=${encodedMessage}`;
 
             // 3. On utilise la même fonction pour ouvrir le lien
             tg.openLink(potatoUrl);
