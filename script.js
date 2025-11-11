@@ -862,6 +862,32 @@ document.addEventListener('DOMContentLoaded', function () {
         return message;
     }
 
+    // --- NOUVELLE FONCTION POUR COPIER DANS LE PRESSE-PAPIERS ---
+    function copyToClipboard(text) {
+        if (navigator.clipboard) { // API moderne et sécurisée
+            navigator.clipboard.writeText(text).then(() => {
+                showNotification('✅ Commande copiée ! Colle-la dans le chat.');
+                tg.HapticFeedback.notificationOccurred('success');
+            }, (err) => {
+                showNotification('❌ Erreur en copiant le message');
+            });
+        } else { // Ancien fallback (pour certains navigateurs)
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed'; // Hors de l'écran
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showNotification('✅ Commande copiée ! Colle-la dans le chat.');
+                tg.HapticFeedback.notificationOccurred('success');
+            } catch (err) {
+                showNotification('❌ Erreur en copiant le message');
+            }
+            document.body.removeChild(textArea);
+        }
+    }
 
     // --- GESTION DES ÉVÉNEMENTS ---
 
@@ -1048,21 +1074,40 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Clic sur "Confirmer la commande" (VERSION POTATO)
-        if (target.closest('#confirm-order-button')) {
+     /*    if (target.closest('#confirm-order-button')) {
             // 1. Remplace 'TON_PSEUDO_POTATO' par ton VRAI pseudo Potato.
             const targetPotatoUser = 'BPDiSPENSARY';
 
             let message = formatOrderMessage();
-            message = message.replace(/\*/g, '');
+            message = message.replace(//g, '');
             const encodedMessage = encodeURIComponent(message);
 
            // 2. On construit le lien Potato.  https://dympt.org/ - `https://potato.im/p/u/${targetPotatoUser}?text=${encodedMessage}`;
 
             // (Utilise 'p/u/' pour un compte utilisateur, ou 'p/s/' pour un bot)
             //const potatoUrl = `https://dympt.org/${targetPotatoUser}?text=${encodedMessage}`;
-            const potatoUrl = `https://dympt.org/p/u/${targetPotatoUser}?text=${encodedMessage}`;
+            const potatoUrl = `https://dympt.org/${targetPotatoUser}`;
 
             // 3. On utilise la même fonction pour ouvrir le lien
+            tg.openLink(potatoUrl);
+        } */
+
+        // Clic sur "Confirmer la commande" (VERSION COPIER/COLLER - LA SEULE FIABLE)
+        if (target.closest('#confirm-order-button')) {
+            
+            const targetPotatoUser = 'BPDiSPENSARY';
+
+            // 1. C'est le lien de profil qui MARCHE (vu dans ta vidéo)
+            const potatoUrl = `https://dympt.org/${targetPotatoUser}`;
+
+            // 2. On prépare le message
+            let message = formatOrderMessage();
+            message = message.replace(/\*/g, ''); 
+            
+            // 3. On copie le message dans le presse-papiers
+            copyToClipboard(message);
+            
+            // 4. On ouvre le lien du PROFIL (qui, on le sait, marche)
             tg.openLink(potatoUrl);
         }
 
