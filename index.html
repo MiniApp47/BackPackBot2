@@ -652,10 +652,12 @@
 
         .main-action-btn:disabled,
         .secondary-action-btn:disabled {
-            background: var(--tertiary-bg-color); /* Un gris foncé */
+            background: var(--tertiary-bg-color);
+            /* Un gris foncé */
             color: var(--hint-color);
             opacity: 0.6;
-            cursor: not-allowed; /* Change le curseur pour montrer qu'il est bloqué */
+            cursor: not-allowed;
+            /* Change le curseur pour montrer qu'il est bloqué */
         }
 
 
@@ -1093,6 +1095,13 @@
         #confirmation-summary .summary-line.discount {
             color: var(--green-color);
         }
+        .farm-card.unclickable {
+            opacity: 0.9; 
+
+           /* opacity: 0.5; Grisé 
+            cursor: not-allowed;  Curseur "interdit" 
+            filter: grayscale(80%);  Optionnel: en noir et blanc */
+        }
     </style>
 </head>
 
@@ -1300,11 +1309,14 @@
     <div id="page-home" class="page">
         <div class="top-marquee">
             <div class="marquee-content">
-                <span> BEST SELECTION 2025/26 🏆 - REJOINGNEZ NOS RESEAUX 📲 </span> <!-- FINIR ICI ET POTATO SOLUS -->
-                <span> BEST SELECTION 2025/26 🏆 - REJOINGNEZ NOS RESEAUX 📲 </span> <!-- FINIR ICI ET POTATO SOLUS -->
-                <span> BEST SELECTION 2025/26 🏆 - REJOINGNEZ NOS RESEAUX 📲 </span> <!-- FINIR ICI ET POTATO SOLUS -->
-                <span> BEST SELECTION 2025/26 🏆 - REJOINGNEZ NOS RESEAUX 📲 </span> <!-- FINIR ICI ET POTATO SOLUS -->
-
+                <span> BEST SELECTION 2025/26 🏆 </span>
+                <span>REJOINGNEZ NOS RESEAUX 📲</span>
+                <span> BEST SELECTION 2025/26 🏆 </span>
+                <span>REJOINGNEZ NOS RESEAUX 📲</span>
+                <span> BEST SELECTION 2025/26 🏆 </span>
+                <span>REJOINGNEZ NOS RESEAUX 📲</span>
+                <span> BEST SELECTION 2025/26 🏆 </span>
+                <span>REJOINGNEZ NOS RESEAUX 📲</span>
 
             </div>
         </div>
@@ -1446,14 +1458,14 @@
 
                <svg width="20" height="20"><use href="#icon-clipboard"/></svg>
  -->
-                <!-- </button>
+            <!-- </button>
 
             <button id="confirm-order-button" class="main-action-btn telegram-button">
                 <span>Étape 2: 💬 Contacter sur Potato</span>
             </button> -->
-                <!--             <button id="confirmation-modify-order" class="secondary-action-btn">✏️ Modifier</button>
+            <!--             <button id="confirmation-modify-order" class="secondary-action-btn">✏️ Modifier</button>
  -->
-                <!--             <button id="confirm-order-button" class="main-action-btn telegram-button">💬 Contacter sur Potato</button>
+            <!--             <button id="confirm-order-button" class="main-action-btn telegram-button">💬 Contacter sur Potato</button>
  -->
         </div>
     </div>

@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'MousseauStar.mp4',
                             description: 'Type d\'exctraction \n Live rosin 70-120u',
                             tarifs: [
-                                { weight: '1g', price: 250.00 },
-                                { weight: '2g', price: 500.00 },
+                                { weight: '2g', price: 250.00 },
+                                { weight: '4g', price: 500.00 },
                             ]
                         },
                         {
@@ -87,8 +87,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'MousseauStar.mp4',
                             description: 'Type d\'exctraction \n Live rosin 70-120u',
                             tarifs: [
-                                { weight: '1g', price: 250.00 },
-                                { weight: '2g', price: 500.00 },
+                                { weight: '2g', price: 250.00 },
+                                { weight: '4g', price: 500.00 },
                             ]
                         },
                         {
@@ -171,16 +171,17 @@ document.addEventListener('DOMContentLoaded', function () {
             farm: '',
             type: 'Hash',
             quality: ' 🍫 Hash',
-            image: 'CategExctra.png', // Image de la catégorie
+            image: 'CategExctra.png', 
 
             farms: [
                 {
-                    id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                    id: 'WIZARDTREES',
                     name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits',
+                    image: 'CategHash.png', 
+                    badgeText: '0 produits',
+                    clickable: false, 
                     products: [
-                        {
+                       /*  {
                             id: 'ZangBanger',
                             flag: '🇺🇸',
                             name: '🍇 Zang Banger 🌪',
@@ -211,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '7g', price: 250.00 },
                                 { weight: '10,5g', price: 350.00 },
                             ]
-                        }
+                        } */
                     ]
                 }
             ]
@@ -431,6 +432,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const card = document.createElement('div');
             card.className = 'farm-card'; // NOUVELLE CLASSE
             card.dataset.farmId = farm.id; // DATASET IMPORTANT
+
+            if (farm.clickable === false) {
+                card.classList.add('unclickable');
+            }
+
             const productCount = farm.products.length;
 
             let badgeHTML = '';
@@ -439,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             card.innerHTML = `
-            <div class="card-badge">${productCount} produit${productCount > 1 ? 's' : ''}</div>
+            <div class="card-badge">${productCount > 0 ? productCount + ' produit' + (productCount > 1 ? 's' : '') : farm.badgeText || ''}</div>
             
             <img src="${farm.image}" alt="${farm.name}">
            
@@ -990,6 +996,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // 2. NOUVEAU : Clic sur une carte FARM
         const farmCard = target.closest('.farm-card');
         if (farmCard) {
+
+            if (farmCard.classList.contains('unclickable')) {
+                return;
+            }
+
             currentView = 'products'; // On va à la vue "products"
             currentFarmId = farmCard.dataset.farmId;
             // On reset les filtres
