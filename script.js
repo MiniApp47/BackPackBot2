@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             promoEligible: true,
                             type: 'Hash',
                             image: 'Neujeu3.png',
-                            video: 'VideoNejeu1.mp4',
+                            video: 'VideoNejeu2.mp4',
                             description: 'Type d\'exctraction \n Wpff-120u',
                             tarifs: [
                                 { weight: '1g', price: 80.00 },
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             promoEligible: true,
                             type: 'Hash',
                             image: 'Neujeu4.png',
-                            video: 'VideoNejeu2.mp4',
+                            video: 'VideoNejeu1.mp4',
                             description: 'Type d\'exctraction \n Wpff-120u',
                             tarifs: [
                                 { weight: '1g', price: 80.00 },
@@ -176,28 +176,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-                    id: 'WIZARDTREES',
-                    name: 'Wizard trees 🔮',
-                    image: 'CategHash.png', 
+                    id: 'ESTATICO',
+                    name: 'Estatico 🚀 ',
+                    image: 'Estatico.jpeg', 
                     badgeText: '0 produits',
-                    clickable: false, 
+                    // clickable: false, 
                     products: [
-                       /*  {
-                            id: 'ZangBanger',
+                        {
+                            id: 'GELATO41',
                             flag: '🇺🇸',
-                            name: '🍇 Zang Banger 🌪',
-                            farm: '🔮 Wizard trees 🔮',
+                            name: '🥭 GELATO 41 ⚡',
+                            farm: '🇺🇸 ESTÀTICO 🇺🇸',
                             promoEligible: true,
                             type: 'Weed',
-                            image: 'ZangBangerProduct.jpg',
-                            video: 'VideoCali2.mp4',
-                            description: 'Ultra rare - 27.33% THC \n ( Sherbanger #22 x Zangria )',
+                            image: 'Gelato41Product.jpg',
+                            video: 'Gelato41.mp4',
+                            description: 'STATIC-SIFT \n 139-73U',
                             tarifs: [
-                                { weight: '3,5g', price: 130.00 },
-                                { weight: '7g', price: 250.00 },
-                                { weight: '10,5g', price: 350.00 },
+                                { weight: '1g', price: 60.00 },
+                                { weight: '5g', price: 250.00 },
+                                { weight: '10g', price: 450.00 },
                             ]
-                        },
+                        } /*
                         {
                             id: 'Potion',
                             flag: '🇺🇸',
