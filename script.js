@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             type: 'Hash',
                             image: 'Neujeu3.png',
                             video: 'VideoNejeu2.mp4',
-                            description: 'Type d\'exctraction \n Wpff-120u',
+                            description: 'Type d\'exctraction \n Wpff/120u-73u',
                             tarifs: [
                                 { weight: '1g', price: 80.00 },
                                 { weight: '2g', price: 150.00 },
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             type: 'Hash',
                             image: 'Neujeu4.png',
                             video: 'VideoNejeu1.mp4',
-                            description: 'Type d\'exctraction \n Wpff-120u',
+                            description: 'Type d\'exctraction \n Wpff-120u-73u',
                             tarifs: [
                                 { weight: '1g', price: 80.00 },
                                 { weight: '2g', price: 150.00 },
