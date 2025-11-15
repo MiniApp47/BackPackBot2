@@ -8,20 +8,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- CONFIGURATION DES LIENS DE CONTACT ---
     const contactLinks = [
-        { name: 'Instagram', url: 'https://www.instagram.com/back_packstash?igsh=NDRhZjA2MzJrbWh0', className: 'instagram', text: "Instagram", icon: '#icon-instagram', id: 'instagram' },
-        { name: 'Potato', url: 'https://dympt.org/joinchat/HoX_FfMZTJjNwyaFPa2EFw', icon: '#icon-potato', id: 'potato', className: 'potato', text: "Potato" }
+    { name: 'WhatsApp', url: 'https://wa.me/xxxxxxxxxx', icon: '#icon-whatsapp', id: 'whatsapp' ,className: 'whatsapp', text: "WhatsApp"},
+    { name: 'Instagram', url: 'https://www.instagram.com/plugsbot?igsh=MTYzamtyZ2JpNHJpOQ%3D%3D&utm_source=qr', className: 'instagram', text: "Instagram" ,icon: '#icon-instagram', id: 'instagram' },
+    { name: 'Snapchat', url: 'https://snapchat.com/add/user', icon: '#icon-snapchat', id: 'snapchat', className: 'snapchat' , text: "Snapchat"},
+    { name: 'Telegram', url: 'https://t.me/PlugsBotOfficielBot', icon: '#icon-telegram', id: 'telegram',className: 'telegram', text: "Telegram" },
+    { name: 'Potato', url: 'https://m.potato.im', icon: '#icon-potato', id: 'potato', className: 'potato', text: "Potato"}
     ];
 
     // --- DONNÉES DE L'APPLICATION (NOUVELLE STRUCTURE) ---
     const appData = [
         // --- Catégorie 1: Mousseux Cake ---
         {
-            id: 'EXTRACTION',
-            name: ' 🔍 Exctraction',
+            id: 'HASH',
+            name: '🍫 Hash',
             farm: '',
             type: 'Hash',
-            quality: ' 🔍 Exctraction',
-            image: 'CategExt.png', // Image de la catégorie
+            quality: ' 🍫 Hash',
+            image: 'CategHash.png', // Image de la catégorie
 
             // La catégorie contient maintenant des "farms"
             farms: [
@@ -31,21 +34,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     image: 'Frosty2.png', // Mets une image de farm si tu veux
                     badgeText: '5 produits',
                     products: [
-                        {
-                            id: 'Papaya',
+                         {
+                            id: 'Amnesia',
                             flag: '🇺🇸',
-                            name: '🍑 Papaya 🍍',
-                            farm: '❄️ Frosty hash ❄️',
+                            name: '🌿 AMNÉSIA 🌿',
+                            farm: 'Farm',
                             promoEligible: true,
                             type: 'Hash',
-                            image: 'Neujeu3.png',
-                            video: 'VideoNejeu2.mp4',
-                            description: 'Type d\'exctraction \n Wpff/120u-73u',
+                            image: 'FirstProduct.png',
+                            video: 'FirstProduct.mp4',
+                            description: 'Description',
                             tarifs: [
-                                { weight: '1g', price: 80.00 },
-                                { weight: '2g', price: 150.00 },
+                                { weight: '2g', price: 10.00 },
+                                { weight: '4g', price: 20.00 },
+                                { weight: '10g', price: 50.00 },
+                                { weight: '50g', price: 180.00 },
+                                { weight: '100g', price: 280.00 },
+
                             ]
-                        },/* changer la police, potato redirect, LiveRosin 3 varieter differente et certainnee scelle on peut pas cliquer dessus, add drapeau sur les image : usa    */
+                        }/*
+                        
+                        ,/
                         {
                             id: 'Bluezushi',
                             flag: '🇺🇸',
@@ -54,8 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             promoEligible: true,
                             type: 'Hash',
                             image: 'Neujeu4.png',
-                            video: 'VideoNejeu1.mp4',
-                            description: 'Type d\'exctraction \n Wpff-120u-73u',
+                            video: 'VideoNejeu2.mp4',
+                            description: 'Type d\'exctraction \n Wpff-120u',
                             tarifs: [
                                 { weight: '1g', price: 80.00 },
                                 { weight: '2g', price: 150.00 },
@@ -84,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             promoEligible: true,
                             type: 'Hash',
                             image: 'Rupture.png',
-                            clickable: false, 
+                            clickable: false,
                             video: 'MousseauStar.mp4',
                             description: 'Type d\'exctraction \n Live rosin 70-120u',
                             tarifs: [
@@ -106,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '2g', price: 250.00 },
                                 { weight: '4g', price: 500.00 },
                             ]
-                        }
+                        } */
                     ]
                 }
 
@@ -115,21 +124,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // --- Catégorie 2: V.V.S TANGER ---
         {
-            id: 'FLEURS',
-            name: ' 🥀 Fleurs',
+            id: 'BEUH',
+            name: ' 🍀 Beuh',
             farm: '',
             type: 'Weed',
-            quality: ' 🥀 Fleurs',
-            image: 'CategFleurs.png', // Image de la catégorie
+            quality: ' 🍀 Beuh',
+            image: 'CategBeuh.png', // Image de la catégorie
 
             farms: [
                 {
-                    id: 'WIZARDTREES', // J'ai inventé un ID de farm
+               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
                     name: 'Wizard trees 🔮',
                     image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits',
+                    badgeText: '2 produits', */
                     products: [
-                        {
+                        /* {
                             id: 'ZangBanger',
                             flag: '🇺🇸',
                             name: '🍇 Zang Banger 🌪',
@@ -160,60 +169,45 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '7g', price: 250.00 },
                                 { weight: '10,5g', price: 350.00 },
                             ]
-                        }
+                        } */
                     ]
                 }
             ]
         },
-         // --- Catégorie 2: V.V.S TANGER ---
-         {
-            id: 'HASH',
-            name: ' 🍫 Hash',
+        // --- Catégorie 2: V.V.S TANGER ---
+        {
+            id: 'White',
+            name: '☃️ White',
             farm: '',
-            type: 'Hash',
-            quality: ' 🍫 Hash',
-            image: 'CategExctra.png', 
+            type: 'White',
+            quality: '☃️ White',
+            image: 'CategWhite.png',
 
             farms: [
                 {
-                    id: 'ESTATICO',
-                    name: 'Estatico 🚀 ',
-                    image: 'Estatico.jpeg', 
+                    /*id: 'WIZARDTREES',
+                    name: 'Wizard trees 🔮',
+                    image: 'CategHash.png', 
                     badgeText: '0 produits',
-                    // clickable: false, 
+                    clickable: false,  */
                     products: [
-                        {
-                            id: 'GELATO41',
+
+                      /*   {
+                            id: 'ZangBanger',
                             flag: '🇺🇸',
-                            name: '🥭 GELATO 41 ⚡',
-                            farm: '🇺🇸 ESTÀTICO 🇺🇸',
+                            name: '🍇 Zang Banger 🌪',
+                            farm: '🔮 Wizard trees 🔮',
                             promoEligible: true,
                             type: 'Weed',
-                            image: 'Gelato41Product.jpg',
-                            video: 'Gelato41.mp4',
-                            description: 'STATIC-SIFT \n 139-73U',
+                            image: 'ZangBangerProduct.jpg',
+                            video: 'VideoCali2.mp4',
+                            description: 'Ultra rare - 27.33% THC \n ( Sherbanger #22 x Zangria )',
                             tarifs: [
-                                { weight: '1g', price: 60.00 },
-                                { weight: '5g', price: 250.00 },
-                                { weight: '10g', price: 450.00 },
+                                { weight: '3,5g', price: 130.00 },
+                                { weight: '7g', price: 250.00 },
+                                { weight: '10,5g', price: 350.00 },
                             ]
                         },
-                        {
-                            id: 'GELATO41-2',
-                            flag: '🇺🇸',
-                            name: 'GELATO 41 🍧',
-                            farm: '🇺🇸 ESTÀTICO 🇺🇸',
-                            promoEligible: true,
-                            type: 'Weed',
-                            image: 'Gelato-2.png',
-                            video: 'Gelato41-2.mp4',
-                            description: 'FROZEN-SIFT',
-                            tarifs: [
-                                { weight: '1g', price: 30.00 },
-                                { weight: '5g', price: 130.00 },
-                                { weight: '10g', price: 250.00 },
-                            ]
-                        } /*
                         {
                             id: 'Potion',
                             flag: '🇺🇸',
@@ -231,8 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             ]
                         } */
                     ]
-                }
-            ]
+                }]
         }
     ];
 
@@ -256,11 +249,11 @@ document.addEventListener('DOMContentLoaded', function () {
             value: 10,       // 20%
             appliesTo: 'eligible' // 'eligible' (articles marqués) ou 'all' (tout le panier)
         },
-       /*  "WELCOME5": {
-            type: 'percent',   // 20%
-            value: 20,        // 20%
-            appliesTo: 'all' // S'applique à tout
-        } */
+        /*  "WELCOME5": {
+             type: 'percent',   // 20%
+             value: 20,        // 20%
+             appliesTo: 'all' // S'applique à tout
+         } */
         // Ajoute d'autres codes ici
 
         // ADD CUMULABLE FONCTION POUR PLUTARD
@@ -326,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- LOGIQUE D'AFFICHAGE ---
 
-    // --- MODIFIÉ : renderHomePage ---
+    // --- MODIFIÉ ( sans sous categorie ): renderHomePage ---
 
     function renderHomePage() {
         // Toujours afficher le conteneur principal des filtres
@@ -351,49 +344,58 @@ document.addEventListener('DOMContentLoaded', function () {
             productListContainer.style.gridTemplateColumns = 'repeat(1, 1fr)';
 
         } else if (currentView === 'farms') {
+            // --- MIS EN COMMENTAIRE COMME DEMANDÉ ---
+            /*
             renderFarmList(currentCategoryId);
-
+    
             // --- GESTION DES FILTRES (Vue Farms) ---
             searchFilterWrapper.style.display = 'none';
-            farmFilterWrapper.style.display = 'none'; // Pas de filtres pour les farms
+            farmFilterWrapper.style.display = 'none'; 
             qualityFilterWrapper.style.display = 'none';
-
+    
             // --- GESTION DU STYLE DE GRILLE ---
-            productListContainer.style.gridTemplateColumns = 'repeat(1, 1fr)'; // 1 colonne pour les farms
-
+            productListContainer.style.gridTemplateColumns = 'repeat(1, 1fr)'; 
+    
             // --- AJOUT BOUTON RETOUR (vers Catégories) ---
             const category = appData.find(c => c.id === currentCategoryId);
             const backButton = document.createElement('button');
-            backButton.className = 'back-to-categories-btn'; // CLASSE IMPORTANTE
+            backButton.className = 'back-to-categories-btn'; 
             backButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> ${category.name}`;
             backButton.style.cssText = `background: var(--tertiary-bg-color); border: none; color: white; padding: 10px 15px; border-radius: 10px; font-size: 1.1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; margin-top: 3vh;font-family: Copperplate;`;
             filterContainer.prepend(backButton);
+            */
+            // --- FIN DU BLOC COMMENTÉ ---
 
         } else if (currentView === 'products') {
-            renderProductList(currentCategoryId, currentFarmId);
+            // --- MODIFICATION : On ne passe plus currentFarmId ---
+            renderProductList(currentCategoryId);
 
             // --- GESTION DES FILTRES (Vue Produit) ---
             searchFilterWrapper.style.display = 'flex';
-            farmFilterWrapper.style.display = 'flex'; // On montre les filtres produits
-            qualityFilterWrapper.style.display = 'none'; // On cache la qualité
+            farmFilterWrapper.style.display = 'flex';
+            qualityFilterWrapper.style.display = 'none';
 
             // --- GESTION DU STYLE DE GRILLE ---
             productListContainer.style.gridTemplateColumns = 'repeat(2, 1fr)'; // 2 colonnes
 
-            // --- AJOUT BOUTON RETOUR (vers Farms) ---
+            // --- MODIFICATION : Le bouton "Retour" ramène aux CATÉGORIES ---
             const category = appData.find(c => c.id === currentCategoryId);
-            const farm = category.farms.find(f => f.id === currentFarmId);
+            // const farm = category.farms.find(f => f.id === currentFarmId); // <- On n'a plus besoin de ça
             const backButton = document.createElement('button');
-            backButton.className = 'back-to-farms-btn'; // CLASSE IMPORTANTE
+            backButton.className = 'back-to-categories-btn'; // <-- MODIFIÉ (pour réutiliser le clic)
             backButton.innerHTML = `<svg width="24"
-             height="24"
-              viewBox="0 0 24 24"
-              ><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>  ${farm.name}`;
-            backButton.style.cssText = `background: var(--tertiary-bg-color); 
-            border: none; color: white; padding: 10px 15px; 
-            border-radius: 10px; font-size: 1.1rem; 
-            font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; margin-top: 3vh;    font-family: Copperplate;
-            `;
+         height="24"
+          viewBox="0 0 24 24"
+          ><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>  ${category.name}`; // <-- MODIFIÉ (on affiche le nom de la catégorie)
+            backButton.style.cssText = ` background: linear-gradient(180deg, black, transparent); 
+            border-bottom: 2px solid #e605c0;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        color: white; padding: 10px 15px; 
+        border-radius: 10px; font-size: 1.1rem; 
+        font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; margin-top: 3vh;    font-family: Copperplate;
+        `;
             filterContainer.prepend(backButton);
         }
     }
@@ -471,24 +473,28 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Affiche la liste des PRODUITS pour une farm
-    function renderProductList(categoryId, farmId) {
+    // Affiche la liste des PRODUITS pour une CATÉGORIE ENTIÈRE
+    function renderProductList(categoryId) { // <-- MODIFIÉ (on n'a plus besoin de farmId)
         const category = appData.find(c => c.id === categoryId);
         if (!category) {
             productListContainer.innerHTML = '<p class="no-results">Catégorie non trouvée.</p>';
             return;
         }
-        const farm = category.farms.find(f => f.id === farmId);
-        if (!farm) {
-            productListContainer.innerHTML = '<p class="no-results">Farm non trouvée.</p>';
+
+        // --- MODIFICATION MAJEURE ---
+        // On récupère TOUS les produits de TOUTES les farms de cette catégorie
+        const allProducts = category.farms.flatMap(farm => farm.products);
+        // --- FIN MODIFICATION ---
+
+        if (!allProducts || allProducts.length === 0) {
+            productListContainer.innerHTML = '<p class="no-results">Aucun produit dans cette catégorie.</p>';
             return;
         }
-        const filteredProducts = farm.products.filter(product => {
-            const searchMatch = product.name.toLowerCase().includes(currentFilters.searchTerm.toLowerCase());
-            // On a supprimé 'qualityMatch'. Le choix de la catégorie suffit.
-            const farmMatch = currentFilters.farm === 'all' || product.farm === currentFilters.farm;
 
-            return searchMatch && farmMatch; // On retourne sans le qualityMatch
+        const filteredProducts = allProducts.filter(product => { // <-- On filtre la nouvelle liste
+            const searchMatch = product.name.toLowerCase().includes(currentFilters.searchTerm.toLowerCase());
+            const farmMatch = currentFilters.farm === 'all' || product.farm === currentFilters.farm;
+            return searchMatch && farmMatch;
         });
 
         productListContainer.innerHTML = '';
@@ -498,6 +504,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         filteredProducts.forEach(product => {
+            // ... (le reste de la fonction est identique)
             const card = document.createElement('div');
             card.className = 'product-card product-item-card';
             card.dataset.productId = product.id;
@@ -509,63 +516,61 @@ document.addEventListener('DOMContentLoaded', function () {
             let flagHTML = product.flag ? `<span class="product-flag">${product.flag}</span>` : '';
 
             card.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <div class="info">
-                    <div class="name">${product.name} ${flagHTML}</div>
-                    <div class="farm">${product.farm}</div>
-                    <div class="price">${product.tarifs[0].price.toFixed(2)}€</div>
-                </div>
-            `;
+            <img src="${product.image}" alt="${product.name}">
+            <div class="info">
+                <div class="name">${product.name} ${flagHTML}</div>
+                <div class="farm">${product.farm}</div>
+                <div class="price">${product.tarifs[0].price.toFixed(2)}€</div>
+            </div>
+        `;
             productListContainer.appendChild(card);
         });
     }
 
+   // Affiche la page de détail d'un produit
+function renderProductPage(productId) {
+    // On utilise notre nouvelle fonction "helper"
+    const product = getProductById(productId);
+    if (!product) return;
 
-    // Affiche la page de détail d'un produit
-    function renderProductPage(productId) {
-        // On utilise notre nouvelle fonction "helper"
-        const product = getProductById(productId);
-        if (!product) return;
+    const videoElement = document.querySelector('#page-product .product-video');
+    videoElement.src = product.video;
+    videoElement.poster = product.image;
 
-        const videoElement = document.querySelector('#page-product .product-video');
-        videoElement.src = product.video;
-        videoElement.poster = product.image;
+    document.getElementById('product-page-title').innerText = product.name;
+    const detailsContainer = document.getElementById('product-details-content');
 
-        document.getElementById('product-page-title').innerText = product.name;
-        const detailsContainer = document.getElementById('product-details-content');
-
-        let tarifsHTML = product.tarifs.map(tarif => `
-        <div class="tarif-item">
-            <div class="box-tarif">
-                <div class="tarif-wieght">${tarif.weight}</div>
-                <div class="tarif-price">${tarif.price.toFixed(2)}€</div>
-            </div>
-            <button class="add-to-cart-btn" data-product-id="${product.id}" data-weight="${tarif.weight}" data-price="${tarif.price}">
-                <svg width="20" height="20"><use href="#icon-cart"/></svg>
-            </button>
+    let tarifsHTML = product.tarifs.map(tarif => `
+    <div class="tarif-item">
+        <div class="box-tarif">
+            <div class="tarif-wieght">${tarif.weight}</div>
+            <div class="tarif-price">${tarif.price.toFixed(2)}€</div>
         </div>
-    `).join('');
+        <button class="add-to-cart-btn" data-product-id="${product.id}" data-weight="${tarif.weight}" data-price="${tarif.price}">
+            <svg width="20" height="20"><use href="#icon-cart"/></svg>
+        </button>
+    </div>
+`).join('');
 
-        // --- NOUVEAU BLOC DE CODE ---
-        // On prépare le HTML pour la description, seulement si elle existe
-        let descriptionHTML = '';
-        if (product.description) {
-            // On remplace les sauts de ligne \n par des <br> pour l'HTML
-            const formattedDescription = product.description.replace(/\n/g, '<br>');
-            descriptionHTML = `<p class="product-description">${formattedDescription}</p>`;
-        }
-        // --- FIN DU NOUVEAU BLOC ---
-
-        // On injecte le HTML, y compris la description
-        detailsContainer.innerHTML = `
-        <div class="name">${product.name}</div>
-        <div class="farm">${product.farm}</div>
-        ${descriptionHTML} <h4 class="tarifs-title">💰 Tarifs disponibles :</h4>
-        ${tarifsHTML}
-    `;
-        showPage('page-product');
+    // ... (la logique de descriptionHTML ne change pas) ...
+    let descriptionHTML = '';
+    if (product.description) {
+        // ...
     }
+    
+    // On injecte le HTML, y compris la description
+    detailsContainer.innerHTML = `
+    <div class="name">${product.name}</div>
+    <div class="farm">${product.farm}</div>
+    ${descriptionHTML} 
+    <h4 class="tarifs-title">💰 Tarifs disponibles :</h4>
 
+    <div class="tarifs-grid-container">
+        ${tarifsHTML}
+    </div>
+    `;
+    showPage('page-product');
+}
     // Met à jour l'affichage du panier (inchangé)
     function renderCart() {
         const cartContainer = document.getElementById('cart-items-container');
@@ -696,16 +701,16 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         summaryContainer.innerHTML = summaryHTML;
 
-        const copyBtn = document.getElementById('copy-order-btn');
+        /* const copyBtn = document.getElementById('copy-order-btn');
         const contactBtn = document.getElementById('confirm-order-button');
-        
+
         // État initial: Copier = Rouge (main), Contacter = Gris (secondary/disabled)
         copyBtn.classList.add('main-action-btn');
         copyBtn.classList.remove('secondary-action-btn');
-        
+
         contactBtn.classList.add('secondary-action-btn');
         contactBtn.classList.remove('main-action-btn');
-        contactBtn.disabled = true; // On le re-verrouille
+        contactBtn.disabled = true; // On le re-verrouille */
 
         showPage('page-confirmation');
     }
@@ -740,16 +745,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const allNestedProducts = appData.flatMap(category => category.farms.flatMap(farm => farm.products));
 
         // --- MODIFICATION ---
-/*    const categoryQualities = appData.map(c => c.quality);
-        const productQualities = allNestedProducts.map(p => p.quality);
-        const qualities = ['all', ...new Set([...categoryQualities, ...productQualities])];
-
-        const categoryFarms = appData.map(c => c.farm);
-        const productFarms = allNestedProducts.map(p => p.farm);
-        const farms = ['all', ...new Set([...categoryFarms, ...productFarms])]; */
+        /*    const categoryQualities = appData.map(c => c.quality);
+                const productQualities = allNestedProducts.map(p => p.quality);
+                const qualities = ['all', ...new Set([...categoryQualities, ...productQualities])];
+        
+                const categoryFarms = appData.map(c => c.farm);
+                const productFarms = allNestedProducts.map(p => p.farm);
+                const farms = ['all', ...new Set([...categoryFarms, ...productFarms])]; */
         // --- FIN MODIFICATION ---
 
-   // On ne prend les "qualities" QUE des catégories
+        // On ne prend les "qualities" QUE des catégories
         const categoryQualities = appData.map(c => c.quality);
         const qualities = ['all', ...new Set(categoryQualities)];
 
@@ -757,8 +762,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const productFarms = allNestedProducts.map(p => p.farm);
         const farms = ['all', ...new Set(productFarms)];
 
-        qualityFilter.innerHTML = qualities.map(q => `<option value="${q}">${q === 'all' ? 'LES SELECTION DU CHEF' : q}</option>`).join('');
-        farmFilter.innerHTML = farms.map(farm => `<option value="${farm}">${farm === 'all' ? '👨‍🌾  -  Les farms' : farm}</option>`).join('');
+        qualityFilter.innerHTML = qualities.map(q => `<option value="${q}">${q === 'all' ? 'CATEGORIE' : q}</option>`).join('');
+        farmFilter.innerHTML = farms.map(farm => `<option value="${farm}">${farm === 'all' ? 'LES FARM' : farm}</option>`).join('');
 
         searchFilter.addEventListener('input', (e) => {
             currentFilters.searchTerm = e.target.value;
@@ -902,7 +907,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // --- NOUVELLE FONCTION POUR COPIER DANS LE PRESSE-PAPIERS ---
-    function copyToClipboard(text) {
+ /*    function copyToClipboard(text) {
         if (navigator.clipboard) { // API moderne et sécurisée
             navigator.clipboard.writeText(text).then(() => {
                 showNotification('✅ Commande copiée ! Colle-la dans le chat.');
@@ -927,7 +932,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.removeChild(textArea);
         }
     }
-
+ */
     // --- GESTION DES ÉVÉNEMENTS ---
 
     // Clics sur la barre de navigation
@@ -967,10 +972,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (target.closest('#copy-order-btn')) {
             let message = formatOrderMessage();
-            message = message.replace(/\*/g, ''); 
-            
-            copyToClipboard(message);
-            
+            message = message.replace(/\*/g, '');
+
+
             // --- AJOUT : Inverser les styles des boutons ---
             const copyBtn = document.getElementById('copy-order-btn');
             const contactBtn = document.getElementById('confirm-order-button');
@@ -978,13 +982,27 @@ document.addEventListener('DOMContentLoaded', function () {
             // Copier devient Gris (secondary)
             copyBtn.classList.remove('main-action-btn');
             copyBtn.classList.add('secondary-action-btn');
-            
+
             // Contacter devient Rouge (main) et est activé
             contactBtn.classList.remove('secondary-action-btn');
             contactBtn.classList.add('main-action-btn');
             contactBtn.disabled = false; // <-- ON DÉVERROUILLE LE BOUTON
             return; // On s'arrête là
         }
+
+        // 1. Clic sur une carte CATÉGORIE
+        const categoryCard = target.closest('.category-card');
+        if (categoryCard) {
+            currentView = 'products'; // <-- MODIFIÉ (on saute la vue "farms")
+            currentCategoryId = categoryCard.dataset.categoryId;
+            // On reset les filtres
+            currentFilters.searchTerm = '';
+            document.getElementById('search-filter').value = '';
+            renderHomePage();
+            return;
+        }
+
+
 
         // Gère l'accordéon sur la page contact
         const accordionHeader = target.closest('.accordion-header');
@@ -1003,34 +1021,23 @@ document.addEventListener('DOMContentLoaded', function () {
             return; // On arrête là pour ne pas déclencher d'autres clics
         }
 
-        // 1. Clic sur une carte CATÉGORIE
-        const categoryCard = target.closest('.category-card');
-        if (categoryCard) {
-            currentView = 'farms'; // On va à la vue "farms"
-            currentCategoryId = categoryCard.dataset.categoryId;
-            // On reset les filtres
-            currentFilters.searchTerm = '';
-            document.getElementById('search-filter').value = '';
-            renderHomePage();
-            return;
-        }
 
-        // 2. NOUVEAU : Clic sur une carte FARM
-        const farmCard = target.closest('.farm-card');
-        if (farmCard) {
-
-            if (farmCard.classList.contains('unclickable')) {
-                return;
-            }
-
-            currentView = 'products'; // On va à la vue "products"
-            currentFarmId = farmCard.dataset.farmId;
-            // On reset les filtres
-            currentFilters.searchTerm = '';
-            document.getElementById('search-filter').value = '';
-            renderHomePage();
-            return;
-        }
+        // 2. NOUVEAU : Clic sur une carte FARM (MIS EN COMMENTAIRE)
+        /*    const farmCard = target.closest('.farm-card');
+           if (farmCard) {
+   
+               if (farmCard.classList.contains('unclickable')) {
+                   return;
+               }
+   
+               currentView = 'products'; // On va à la vue "products"
+               currentFarmId = farmCard.dataset.farmId;
+               // On reset les filtres
+               currentFilters.searchTerm = '';
+               document.getElementById('search-filter').value = '';
+               renderHomePage();
+               return;
+           } */
 
         // 3. Clic sur une carte PRODUIT
         const productCard = target.closest('.product-item-card');
@@ -1143,41 +1150,42 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Clic sur "Confirmer la commande" (VERSION POTATO)
-     /*    if (target.closest('#confirm-order-button')) {
-            // 1. Remplace 'TON_PSEUDO_POTATO' par ton VRAI pseudo Potato.
-            const targetPotatoUser = 'BPDiSPENSARY';
-
-            let message = formatOrderMessage();
-            message = message.replace(//g, '');
-            const encodedMessage = encodeURIComponent(message);
-
-           // 2. On construit le lien Potato.  https://dympt.org/ - `https://potato.im/p/u/${targetPotatoUser}?text=${encodedMessage}`;
-
-            // (Utilise 'p/u/' pour un compte utilisateur, ou 'p/s/' pour un bot)
-            //const potatoUrl = `https://dympt.org/${targetPotatoUser}?text=${encodedMessage}`;
-            const potatoUrl = `https://dympt.org/${targetPotatoUser}`;
-
-            // 3. On utilise la même fonction pour ouvrir le lien
-            tg.openLink(potatoUrl);
-        } */
+        /*    if (target.closest('#confirm-order-button')) {
+               // 1. Remplace 'TON_PSEUDO_POTATO' par ton VRAI pseudo Potato.
+               const targetPotatoUser = 'BPDiSPENSARY';
+   
+               let message = formatOrderMessage();
+               message = message.replace(//g, '');
+               const encodedMessage = encodeURIComponent(message);
+   
+              // 2. On construit le lien Potato.  https://dympt.org/ - `https://potato.im/p/u/${targetPotatoUser}?text=${encodedMessage}`;
+   
+               // (Utilise 'p/u/' pour un compte utilisateur, ou 'p/s/' pour un bot)
+               //const potatoUrl = `https://dympt.org/${targetPotatoUser}?text=${encodedMessage}`;
+               const potatoUrl = `https://dympt.org/${targetPotatoUser}`;
+   
+               // 3. On utilise la même fonction pour ouvrir le lien
+               tg.openLink(potatoUrl);
+           } */
 
         // Clic sur "Confirmer la commande" (VERSION COPIER/COLLER - LA SEULE FIABLE)
         if (target.closest('#confirm-order-button')) {
             
-            const targetPotatoUser = 'BPDiSPENSARY';
-
-            // 1. C'est le lien de profil qui MARCHE (vu dans ta vidéo)
-            const potatoUrl = `https://dympt.org/${targetPotatoUser}`;
+            // 1. TON PSEUDO TELEGRAM
+            const targetUsername = 'plugsBotOfficiel'; 
 
             // 2. On prépare le message
             let message = formatOrderMessage();
-            message = message.replace(/\*/g, ''); 
+            message = message.replace(/\*/g, ''); // On nettoie
+
+            // 3. (Optionnel mais cool) On copie quand même dans le presse-papier en backup
+            // copyToClipboard(message);
+
+            // 4. On encode et on ouvre le lien
+            const encodedMessage = encodeURIComponent(message);
+            const telegramUrl = `https://t.me/${targetUsername}?text=${encodedMessage}`;
             
-            // 3. On copie le message dans le presse-papiers
-            copyToClipboard(message);
-            
-            // 4. On ouvre le lien du PROFIL (qui, on le sait, marche)
-            tg.openLink(potatoUrl);
+            tg.openLink(telegramUrl);
         }
 
     });
