@@ -197,6 +197,22 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '5g', price: 250.00 },
                                 { weight: '10g', price: 450.00 },
                             ]
+                        },
+                        {
+                            id: 'GELATO41-2',
+                            flag: '🇺🇸',
+                            name: 'GELATO 41 🍧',
+                            farm: '🇺🇸 ESTÀTICO 🇺🇸',
+                            promoEligible: true,
+                            type: 'Weed',
+                            image: 'Gelato-2.png',
+                            video: 'Gelato41-2.mp4',
+                            description: 'FROZEN-SIFT',
+                            tarifs: [
+                                { weight: '1g', price: 30.00 },
+                                { weight: '5g', price: 130.00 },
+                                { weight: '10g', price: 250.00 },
+                            ]
                         } /*
                         {
                             id: 'Potion',
