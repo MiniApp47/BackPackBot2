@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>CandyKush73</title>
+    <title>BackPackBot</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
 
             /* --- MODIFICATION POUR LE FOND D'ÉCRAN --- */
             /* Remplace 'fond-ecran.jpg' par le nom de ton image */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Fondecran.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('LogoBack.jpeg');
             background-size: cover;
             /* L'image couvre tout l'espace */
             background-position: center center;
@@ -63,8 +63,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: linear-gradient(#012e5129, transparent);
-            height: 6vh;
+            background-color: var(--secondary-bg-color);
         }
 
         .page-header .title {
@@ -103,15 +102,9 @@
         }
 
         #page-loader .loader-box {
-            background: #0a5fa129;
+            background: var(--secondary-bg-color);
             padding: 30px;
             border-radius: 20px;
-            height: 25vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #e605c0;
         }
 
         #page-loader img {
@@ -124,21 +117,19 @@
         #page-loader .app-name {
             font-size: 1.5rem;
             font-weight: 700;
-            /*             font-family: Chalkduster, fantasy;
- */
+            font-family: Chalkduster, fantasy;
         }
 
         #page-loader .loading-text {
             color: var(--hint-color);
             margin-top: 10px;
-            /*             font-family: URW Chancery L, cursive;
- */
+            font-family: URW Chancery L, cursive;
         }
 
         /* --- Page d'accueil --- */
         .top-marquee {
             background-color: var(--tertiary-bg-color);
-            color: #e605c0;
+            color: red;
             padding: 8px 0;
             overflow: hidden;
             font-weight: 500;
@@ -147,7 +138,7 @@
 
         .marquee-content {
             display: inline-block;
-            animation: marquee 10s linear infinite;
+            animation: marquee 19s linear infinite;
         }
 
         .marquee-content span {
@@ -156,7 +147,7 @@
             /* Espace entre les deux phrases */
             white-space: nowrap;
             /* Empêche le texte de se couper */
-            font-size: 15px;
+            font-size: 11px;
 
         }
 
@@ -175,9 +166,9 @@
             justify-content: flex-end;
             align-items: center;
             padding: 10px 15px;
-            background: linear-gradient(#012e5185, transparent);
+            background-color: #2c2c2ea1;
             position: relative;
-            height: 11vh;
+            height: 9vh;
         }
 
         .home-logo {
@@ -185,9 +176,9 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            height: 14vh;
+            height: 9vh;
             border-radius: 50%;
-            box-shadow: 0px 0px 10px 2px #e605c0;
+            box-shadow: 0px 0px 10px 2px red;
         }
 
         #page-home .cart-button {
@@ -203,7 +194,7 @@
             /* MODIFIÉ pour l'afficher */
             align-items: center;
             justify-content: center;
-            box-shadow: 0px 0px 10px 2px #e605c0;
+            box-shadow: 0px 0px 10px 2px red;
         }
 
         #quality-filter {
@@ -212,11 +203,10 @@
  */
             height: 7vh;
             font-size: 1.8vh;
-            /*    margin-left: 8vh;
-             border-left: 1px solid grey; */
+            margin-left: 8vh;
             width: 100%;
             text-align: center;
-    background: linear-gradient(45deg, black, transparent);
+            border-left: 1px solid grey;
         }
 
         #quality-filter option {
@@ -235,8 +225,7 @@
 
         .farm-card img {
             width: 95%;
-            height: 20vh;
-            ;
+            height: 25vh;
             object-fit: cover;
             border-radius: 20px;
             margin: auto;
@@ -270,7 +259,7 @@
             position: absolute;
             top: -5px;
             right: -5px;
-            background: #e81e9d;
+            background: #ff6000;
             color: white;
             border-radius: 50%;
             font-size: 0.7rem;
@@ -288,8 +277,6 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            justify-content: center;
-            align-items: center;
         }
 
         .filter-input-wrapper,
@@ -301,8 +288,6 @@
             border-radius: 10px;
             margin-top: 3vh;
             justify-content: center;
-            border-radius: 20px;
-            width: 80%;
         }
 
         .filter-select-wrapper::after {
@@ -318,25 +303,25 @@
 
         .filter-input-wrapper input,
         .filter-select-wrapper select {
+
             padding-top: 15px;
             padding-bottom: 15px;
-            padding-left: 4vh;
+            padding-left: 50px;
             padding-right: 40px;
             border: none;
+            background: transparent;
             color: var(--text-color);
             font-size: 1rem;
             appearance: none;
             -webkit-appearance: none;
+
+            /* --- AJOUTS POUR iOS --- */
             border-radius: 0;
             line-height: normal;
             height: auto;
             position: relative;
             z-index: 1;
             width: 100%;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid #e605c0;
-    background: linear-gradient(45deg, black, transparent);
         }
 
         .filter-input-wrapper input::placeholder {
@@ -366,12 +351,11 @@
         }
 
         .product-card {
+            background: var(--secondary-bg-color);
             border-radius: 15px;
             overflow: hidden;
             cursor: pointer;
             position: relative;
-            border: 2px solid #774364;
-            background: linear-gradient(#3d203c, #4a303a);
         }
 
         .card-badge {
@@ -467,15 +451,15 @@
             border-radius: 20px;
             /* height: 5vh; */
             width: 12vh;
-            color: #6402ff;
-    padding: 1vh;
-    border: none;
-    box-shadow: 0px 0px 10px 2px #e605c0;
-    cursor: pointer;
+            color: red;
+            padding: 1vh;
+            border: none;
+            box-shadow: 0px 0px 10px 2px #d30000;
+            cursor: pointer;
         }
 
         .nav-item.active {
-            color: #ff85ea;
+            color: red;
             background-color: #0000009c;
         }
 
@@ -490,7 +474,6 @@
             margin: auto;
             aspect-ratio: 9 / 16;
             background: #000;
-            border-radius: 20px;
         }
 
         #page-product .product-details {
@@ -504,7 +487,7 @@
         }
 
         .product-details .farm {
-            color: #ff1dd4;
+            color: #ff0000;
         }
 
         .product-details .tarifs-title {
@@ -523,17 +506,14 @@
         }
 
         .add-to-cart-btn {
-            background: linear-gradient(black, transparent);
-            border: 1px solid #ff00d6fc;
+            background: #a05325;
+            border: 1px solid white;
             border-radius: 8px;
-            color: #ff00d6fc;
-            width: 50%;
-            height: 5vh;
+            color: white;
+            width: 35px;
+            height: 35px;
             cursor: pointer;
             display: flex;
-            align-items: center;
-            margin-top: 1vh;
-            justify-content: center;
             align-items: center;
         }
 
@@ -579,7 +559,7 @@
         }
 
         .cart-item .price {
-            color: #cc36b2;
+            color: #e6683c;
             font-weight: 700;
             margin-bottom: 1vh;
         }
@@ -605,7 +585,7 @@
         }
 
         .cart-summary {
-            background: #8b1476a6;
+            background: #3f0000cc;
             color: white;
             padding: 15px;
             border-radius: 10px;
@@ -649,7 +629,7 @@
         }
 
         .main-action-btn {
-            background: #8b1476;
+            background: #ff00008a;
             color: white;
             padding: 15px;
             border-radius: 10px;
@@ -736,8 +716,8 @@
             display: flex;
             justify-content: center;
             border-radius: 20px;
-            background: linear-gradient(#3d203c, #4a303a);
-            border: 2px solid #ff00d62e;
+            background: linear-gradient(#ff000087, #ff390054);
+            border: 2px solid white;
             width: 90%;
             height: 4vh;
         }
@@ -747,7 +727,7 @@
             visibility: hidden;
             /* Caché par défaut */
             min-width: 250px;
-            background-color:#3f223c;
+            background-color: #490100c9;
             color: #fff;
             text-align: center;
             border-radius: 10px;
@@ -804,30 +784,9 @@
             display: flex;
             font-size: 30px;
             justify-content: space-around;
-            width: 90%;
+            width: 80%;
             font-family: Impact, fantasy;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
-
-        .box-tarif .tarif-wieght {
-            border-bottom: 1px solid grey;
-            width: 80%;
-            text-align: center;
-            /* margin-bottom: 1vh; */
-            height: 3.5vh;
-        }
-
-        .box-tarif .tarif-price {
-            border-bottom: 1px solid grey;
-            width: 80%;
-            text-align: center;
-            /* margin-bottom: 1vh; */
-            height: 3.5vh;
-            margin-top: 1vh;
-        }
-
 
         /* --- NOUVEAU STYLE POUR LA PAGE INFO --- */
         #page-info .page-content {
@@ -877,8 +836,8 @@
             height: 15vh;
             width: 15vh;
             margin-bottom: 6vh;
-            border-radius: 25%;
-            box-shadow: 0px 0px 10px 2px #ffe133;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px 2px red;
             margin-top: 2vh;
         }
 
@@ -1042,7 +1001,6 @@
             margin-top: 20px;
             padding: 15px 0;
             border-bottom: 1px solid var(--tertiary-bg-color);
-            display: none;
         }
 
         #promo-input-container {
@@ -1136,67 +1094,12 @@
         #confirmation-summary .summary-line.discount {
             color: var(--green-color);
         }
-
-        .farm-card.unclickable {
+       /*  .farm-card.unclickable {
             opacity: 0.8;
-        }
+        } */
 
-        .product-item-card.unclickable img {
+        .product-item-card.unclickable img{
             opacity: 0.7;
-        }
-
-        #nav-info {
-            display: none;
-        }
-
-        /* --- NOUVEAU STYLE POUR LA GRILLE DES TARIFS --- */
-
-        .tarifs-grid-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            width: 90%;
-        }
-
-        /* On force les .tarif-item à s'adapter à la grille */
-        #page-product .tarifs-grid-container .tarif-item {
-            /* On veut 2 par ligne, avec 10px de gap.
-       (100% - 10px) / 2 = 50% - 5px */
-            width: calc(50% - 5px);
-            margin-top: 0;
-            box-sizing: border-box;
-            height: 20vh;
-            min-height: 4vh;
-            padding: 10px 5px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* On ajuste la police si ça déborde sur mobile */
-        #page-product .tarifs-grid-container .box-tarif {
-            font-size: 22px;
-            /* Un peu plus petit pour que ça rentre */
-            /* Le reste (width: 80%, etc.) est ok */
-        }
-
-        #page-product .tarifs-grid-container .add-to-cart-btn {
-            /* On s'assure que le bouton 'panier' ne prend pas trop de place */
-            flex-shrink: 0;
-        }
-
-        .filter-select-wrapper:has(#quality-filter) {
-            /* C'est ici que tu mets le style de ton image */
-            position: relative;
-            display: flex;
-            align-items: center;
-            background: var(--secondary-bg-color);
-            margin-top: 3vh;
-            justify-content: center;
-
-            /* Les lignes de ton image : */
-            border-radius: 20px;
-            width: 100%;
         }
     </style>
 </head>
@@ -1204,7 +1107,7 @@
 <body>
     <div id="page-contact" class="page">
         <div class="page-content">
-            <img src="Logo.jpg" alt="Logo" class="contact-logo">
+            <img src="LogoReel.png" alt="Logo" class="contact-logo">
             <div class="contact-card">
 
                 <div id="contact-links-container" class="contact-links-list">
@@ -1216,7 +1119,7 @@
 
     <div id="page-info" class="page">
         <div class="page-content">
-            <img src="Logo.jpg" alt="Logo" class="contact-logo">
+            <img src="LogoReel.png" alt="Logo" class="contact-logo">
             <div class="contact-card">
 
                 <div class="accordion-container">
@@ -1396,21 +1299,28 @@
 
     <div id="page-loader" class="page active">
         <div class="loader-box">
-            <img src="Logo.jpg" alt="Logo">
-            <div class="app-name"> 🍬 CandyKush73 🍬 </div>
-            <div class="loading-text">Chargement de CandyKushBot...</div>
+            <img src="LogoReel.png" alt="Logo">
+            <div class="app-name">BackPack</div>
+            <div class="loading-text">Chargement de BackPackBot...</div>
         </div>
     </div>
 
     <div id="page-home" class="page">
         <div class="top-marquee">
             <div class="marquee-content">
+                <span> BEST SELECTION 2025/26 🏆 </span>
                 <span>REJOINGNEZ NOS RESEAUX 📲</span>
+                <span> BEST SELECTION 2025/26 🏆 </span>
                 <span>REJOINGNEZ NOS RESEAUX 📲</span>
+                <span> BEST SELECTION 2025/26 🏆 </span>
+                <span>REJOINGNEZ NOS RESEAUX 📲</span>
+                <span> BEST SELECTION 2025/26 🏆 </span>
+                <span>REJOINGNEZ NOS RESEAUX 📲</span>
+
             </div>
         </div>
         <div class="home-header">
-            <img src="Logo.jpg" alt="Logo" class="home-logo">
+            <img src="LogoReel.png" alt="Logo" class="home-logo">
             <button class="cart-button" id="home-cart-button">
                 <svg width="20" height="20">
                     <use href="#icon-cart" />
@@ -1427,9 +1337,9 @@
                 <input type="text" id="search-filter" placeholder="Rechercher un produit...">
             </div>
             <div class="filter-select-wrapper">
-                <!--  <svg width="20" height="20">
+                <svg width="20" height="20">
                     <use href="#icon-quality" />
-                </svg> -->
+                </svg>
                 <select id="quality-filter"></select>
             </div>
             <div class="filter-select-wrapper" style="display:none ;">
@@ -1524,9 +1434,22 @@
 
             <button id="confirmation-modify-order" class="secondary-action-btn">✏️ Modifier</button>
 
-            <button id="confirm-order-button" class="main-action-btn telegram-button" style="margin-top: 10px;">
-                🚀 Envoyer la commande sur Telegram
+            <p class="confirmation-instructions">
+                Cliquez pour copier votre commande, puis contactez-nous :
+            </p>
+
+
+
+            <button id="copy-order-btn" class="main-action-btn"> <svg width="20" height="20">
+                    <use href="#icon-clipboard" />
+                </svg>
+                <span>Étape 1: 📋 Copier la commande </span>
             </button>
+
+            <button id="confirm-order-button" class="secondary-action-btn telegram-button" disabled>
+                <span>Étape 2: 💬 Contacter sur Potato</span>
+            </button>
+
 
 
             <!--     <button id="copy-order-btn" class="secondary-action-btn">
